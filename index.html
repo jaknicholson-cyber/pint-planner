@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoOrK1YyB5qZKj0=" crossorigin="" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.css" />
   <style>
 :root{--ink:#152922;--muted:#69746d;--paper:#f8f7f2;--card:#fffefa;--line:#e2e6df;--green:#185e43;--lime:#dcf98d;--amber:#f9bf57;--cream:#f5f1e6;--shadow:0 14px 35px rgba(15,38,30,.06)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:var(--paper);font-family:'DM Sans',system-ui,-apple-system,sans-serif;font-size:14px;line-height:1.5}button,input,select{font:inherit}button{cursor:pointer}a{color:inherit}input,select{appearance:auto}em{font-style:normal;color:#bad579}h1,h2,h3,p{margin-top:0}h1,h2,h3{font-family:Outfit,'DM Sans',sans-serif;letter-spacing:-.045em}h2{font-size:32px;line-height:1.1;margin-bottom:0}h3{font-size:21px;margin-bottom:0}.eyebrow{font-size:10px;font-weight:900;letter-spacing:1.8px;color:#718074}.app-shell{display:flex;min-height:100vh}.sidebar{width:242px;position:fixed;inset:0 auto 0 0;background:#142a25;color:#f8fff2;display:flex;flex-direction:column;padding:34px 20px;z-index:1001}.brand{display:flex;align-items:center;gap:13px;text-decoration:none;margin:0 0 45px 12px}.brand-mark{background:#dbf38e;color:#183d2c;font-family:Outfit,sans-serif;font-weight:900;font-size:32px;width:51px;height:51px;display:grid;place-items:center;border-radius:14px;line-height:1}.brand-dot{color:#ef9b41}.brand-words{font:900 16px/.91 Outfit,sans-serif;letter-spacing:-.5px}.sidebar-top-label{font-size:9px;color:#82948b;letter-spacing:1px;font-weight:800;margin:0 0 18px 12px}.main-nav{display:flex;flex-direction:column;gap:5px}.nav-btn{width:100%;border:none;display:flex;align-items:center;gap:14px;border-radius:11px;padding:14px 14px;text-align:left;background:none;color:#b1c4ba;font-weight:800;font-size:13px}.nav-btn:hover{background:#23473a}.nav-btn.active{color:#1b3328;background:#def18f}.nav-emoji{font-size:20px;font-weight:600;width:23px;text-align:center}.sidebar-bottom{margin-top:auto;font-size:9px;letter-spacing:1.2px;font-weight:800;color:#d6ee97}.sidebar-bottom small{font-size:11px;letter-spacing:0;color:#91a39a;display:block;margin-top:8px;font-weight:500}.online-pip{display:inline-block;width:7px;height:7px;border-radius:100%;background:#d8ef8a;margin-right:5px}.main{max-width:1650px;min-width:0;flex:1;margin-left:242px;padding:0 44px}.topbar{height:84px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.topbar-right{display:flex;align-items:center;gap:20px;color:#6b7b70;font-size:12px;font-weight:700}.circle-icon{border-radius:50%;background:#e5eddb;width:34px;height:34px;display:grid;place-items:center}.page{display:none;padding-top:30px}.page.active{display:block}.hero{height:294px;background:#153e30;position:relative;border-radius:18px;overflow:hidden;color:#fff;padding:35px 43px;display:flex;align-items:center;justify-content:space-between}.hero:before{content:'';width:540px;height:540px;position:absolute;right:-170px;top:-200px;border:1px solid #63916e66;border-radius:50%}.hero:after{content:'';width:420px;height:420px;position:absolute;right:-110px;top:-142px;border:1px solid #63916e66;border-radius:50%}.hero-copy{z-index:2;position:relative;max-width:520px}.hero-kicker{color:#d2eb97;font-size:10px;letter-spacing:2px;font-weight:900}.hero-kicker span{margin-left:5px}.hero h1{font-weight:900;letter-spacing:-.075em;font-size:clamp(38px,4vw,61px);margin:12px 0 7px;line-height:.99}.hero h1 em{color:#e2f696}.hero p{color:#bed2c6;max-width:415px;margin-bottom:21px}.hero-action{display:inline-flex;align-items:center;gap:14px;text-decoration:none;color:#183929;background:#e0f394;border-radius:9px;font-weight:900;font-size:12px;padding:12px 18px}.hero-art{position:relative;align-self:stretch;width:230px;margin-right:10%}.pint-glow{position:absolute;width:280px;height:280px;background:#c7d87d25;filter:blur(20px);border-radius:100%;left:0;top:-20px}.pint-illustration{position:absolute;left:54px;top:43px;width:120px;height:179px;border:7px solid #f7f0de;border-top:0;border-radius:8px 8px 23px 23px;transform:rotate(-12deg);background:#e69a37;box-shadow:inset -19px 0 0 #ba7528,inset 12px 0 0 #f3bb5e,0 18px 30px #0002;z-index:2}.foam{height:36px;position:absolute;top:-21px;left:-9px;right:-7px;background:#fffae8;border-radius:20px 20px 11px 17px;z-index:2}.foam b{display:block;background:#fffae8;position:absolute;border-radius:50%;width:29px;height:29px;bottom:-10px;left:10px}.foam b:nth-child(2){left:48px;bottom:-5px;width:24px;height:24px}.foam b:nth-child(3){left:82px;bottom:-18px;width:21px;height:34px}.beer-handle{position:absolute;border:11px solid #f6eee1;border-left:0;right:-56px;top:25px;width:49px;height:100px;border-radius:0 45px 45px 0}.beer-liquid i{position:absolute;background:#fff4c14d;border-radius:50%;width:7px;height:14px;left:24px;top:62px}.beer-liquid i:nth-child(2){left:79px;top:90px}.beer-liquid i:nth-child(3){left:51px;top:122px}.hero-sticker{position:absolute;top:18px;left:166px;font-size:12px;line-height:1.05;transform:rotate(13deg);font-weight:900;color:#eced91}.section-heading{display:flex;justify-content:space-between;align-items:flex-end;margin:32px 0 18px}.section-heading .eyebrow,.forecast-title .eyebrow,.sharing-panel .eyebrow{display:block;margin-bottom:7px}.small-note{font-size:11px;color:#89938a}.details-card{border:1px solid var(--line);border-radius:17px;background:var(--card);padding:22px;box-shadow:var(--shadow)}.form-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px 14px}.field{display:flex;flex-direction:column;gap:7px;min-width:0}.field span{font-weight:800;font-size:12px}.field small{font-weight:500;font-size:10px;color:#9da49e}.field input,.field select{width:100%;min-width:0;border:1px solid #e0e5dd;background:#f7f8f3;color:#2d3e33;border-radius:9px;padding:12px 13px;outline-color:#88ae80;min-height:44px}.input-with-button{position:relative;display:flex;min-width:0}.input-with-button input{padding-right:62px}.input-action{position:absolute;right:6px;top:6px;border:0;background:#e3eed9;color:#285e43;font-weight:800;border-radius:7px;padding:7px 9px;font-size:11px}.details-footer{display:flex;align-items:center;justify-content:space-between;margin-top:21px;padding-top:19px;border-top:1px solid var(--line);gap:12px;font-size:11px;font-weight:700;color:#87918a}.green-check{color:#3d9268;font-weight:900}.btn{border:1px solid transparent;display:inline-flex;justify-content:center;align-items:center;gap:14px;min-height:43px;border-radius:9px;padding:11px 16px;white-space:nowrap;font-size:12px;font-weight:900;transition:transform .15s,background .15s;text-decoration:none}.btn:active{transform:scale(.98)}.btn-dark{background:#163e30;color:white}.btn-dark:hover{background:#27664c}.btn-outline{background:white;border-color:#d9e2d8;color:#19402f}.btn-outline:hover{background:#eef6e8}.btn-light{background:#eaf0e4;color:#294d39}.full{width:100%}.forecast-container{margin-top:38px}.forecast-title{display:flex;justify-content:space-between;align-items:end;margin-bottom:17px}.weather-provider{font-size:10px;color:#8e968d}.weather-panel{border:1px solid var(--line);border-radius:15px;background:#fffefa;padding:20px}.weather-loading{font-size:13px;color:#68756a}.weather-grid{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:1px;overflow:hidden;border-radius:12px;border:1px solid #e4e9dc;background:#e4e9dc}.weather-main{background:#e3f1db;padding:19px 20px;display:flex;gap:14px;align-items:center}.weather-symbol{font-size:46px}.weather-main b{font-size:20px;display:block;line-height:1.2;font-family:Outfit}.weather-main small,.weather-cell small{color:#718075;font-size:11px;display:block;margin-top:4px}.weather-cell{padding:20px;background:#fffefa}.weather-cell b{font-family:Outfit;font-size:24px;line-height:1}.weather-cell span{font-size:11px;font-weight:800;color:#536b58;display:block;margin-bottom:9px}.weather-caption{color:#8b9589;margin:12px 3px 0;font-size:11px}.route-section{margin-top:40px}.route-layout{display:grid;grid-template-columns:330px minmax(0,1fr);align-items:stretch;min-height:550px;gap:16px}.route-sidebar{background:#fffefa;border:1px solid var(--line);border-radius:16px;padding:19px;display:flex;flex-direction:column;min-height:490px;max-height:700px;overflow-y:auto}.route-subhead{display:flex;align-items:center;justify-content:space-between;margin-bottom:15px}.count-pill{background:#e7f3d5;border-radius:25px;padding:6px 10px;color:#467247;font-size:11px;font-weight:800}.stops-list{flex:1;min-height:140px}.empty-stops{text-align:center;border:1px dashed #d2dfd0;background:#fafcf7;border-radius:12px;padding:22px 10px;color:#8b998b}.empty-stops b{color:#37543f;display:block;font-size:13px}.empty-stops p{margin:7px auto 0;max-width:215px;font-size:11px}.empty-illustration{display:block;font-size:42px;color:#9fba8a;margin:0 0 7px}.stop-card{position:relative;display:flex;gap:10px;padding:11px 3px;border-bottom:1px solid var(--line)}.stop-index{display:grid;place-items:center;flex-shrink:0;width:29px;height:29px;border-radius:100%;background:#deedce;color:#1a6944;font-weight:900}.stop-info{flex:1;min-width:0}.stop-info strong{display:block;font-size:12px;overflow-wrap:anywhere}.stop-info small{color:#8a958a;font-size:10px;display:block}.stop-tools{display:flex;gap:2px;align-items:flex-start}.stop-tools button{background:none;border:0;color:#66766b;font-size:15px;border-radius:5px;padding:1px 5px}.stop-tools button:hover{background:#edf5e8}.leg-label{font-size:10px;color:#69876f;margin:2px 0 0 41px}.route-actions{display:grid;gap:8px;margin-top:15px}.time-summary{background:#153f30;color:#f4f9ef;border-radius:12px;padding:16px;margin-top:16px}.time-summary h4{color:#deef9c;letter-spacing:1px;font-size:10px;margin:0 0 10px}.summary-times{display:grid;grid-template-columns:1fr 1fr;gap:11px}.summary-times span{display:block;color:#b3c9b8;font-size:10px}.summary-times b{display:block;font:800 25px/1.15 Outfit,sans-serif}.time-summary p{font-size:10px;color:#bcd1c3;margin:13px 0 0}.map-wrap{position:relative;overflow:hidden;border-radius:16px;border:1px solid #d8e0d7;background:#e6ebdf;min-height:550px}.map-wrap #map{height:100%;min-height:550px;z-index:0}.map-search-overlay{position:absolute;top:15px;left:50px;right:15px;z-index:500;display:flex;align-items:center;justify-content:space-between;gap:10px;pointer-events:none}.map-search-overlay span{background:white;padding:11px 14px;border-radius:8px;box-shadow:0 5px 15px #0002;color:#34553e;font-size:11px;font-weight:900;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.map-search-overlay button{pointer-events:auto;border:0;background:white;width:39px;height:39px;box-shadow:0 5px 15px #0002;border-radius:9px;font-size:22px;color:#1b6847}.map-footer{position:absolute;bottom:14px;left:16px;right:16px;display:flex;gap:15px;z-index:500;background:#fffefaed;padding:10px 12px;border-radius:8px;flex-wrap:wrap;font-size:10px;color:#4e624f;font-weight:800;pointer-events:none}.legend-dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:4px}.legend-dot.green{background:#226849}.legend-dot.orange{background:#f2a448}.map-hint{margin-left:auto;font-weight:500;color:#839180}.leaflet-popup-content-wrapper{border-radius:12px!important}.leaflet-popup-content{font-family:'DM Sans',sans-serif!important;font-size:12px}.marker-pin{width:22px;height:22px;border:3px solid white;border-radius:50%;background:#236c4a;box-shadow:0 2px 9px #1b452e8c}.marker-pin.selected{background:#f2ad4b;width:26px;height:26px}.pub-popup h4{font-size:15px;font-family:Outfit;margin:0 0 5px}.pub-popup p{margin:0 0 6px;font-size:11px;color:#667e6c}.popup-add{background:#1c5d41;color:white;border:0;border-radius:6px;padding:8px 12px;margin-top:6px;font-weight:800;font-size:11px}.sharing-panel{margin-top:28px;display:flex;align-items:center;justify-content:space-between;background:#e7f0dc;border-radius:15px;padding:25px;gap:22px}.sharing-panel h2{font-size:27px}.sharing-panel p{color:#6e816e;max-width:550px;font-size:12px;margin:10px 0 0}.share-buttons{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;max-width:425px}.footer{padding:25px 0 90px;font-size:9px;color:#84948a;letter-spacing:.4px}.footer a{color:#426650}.compact-heading{padding:50px 0 20px;text-align:center}.compact-heading h1{font-weight:900;font-size:clamp(48px,5vw,76px);letter-spacing:-.07em;margin:7px 0}.compact-heading em{color:#8da84d}.compact-heading p{color:#829084;max-width:480px;margin:0 auto}.roulette-wrap{border:1px solid #e3eadd;border-radius:20px;background:#fffefa;max-width:690px;margin:22px auto 30px;padding:35px 20px;text-align:center;box-shadow:var(--shadow)}.roulette-wheel{margin:0 auto 16px;width:240px;height:240px;padding:13px;border-radius:100%;background:repeating-conic-gradient(#e8edce 0 35deg,#1d573d 35deg 70deg,#f4b44f 70deg 90deg);box-shadow:0 15px 23px #23503922}.roulette-wheel.spinning{animation:spin .45s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}.roulette-ring{border:12px solid #f9fbf6;background:#204b36;width:100%;height:100%;border-radius:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;color:#e8f6a6}.roulette-symbol{font-size:87px;line-height:.9}.roulette-caption{font-size:10px;font-weight:900;letter-spacing:1.5px;max-width:120px;margin-top:14px}.roulette-button{font-size:15px;padding:14px 28px}.roulette-status{font-size:12px;color:#809082;margin:17px 0}.roulette-result{max-width:430px;text-align:left;background:#f3f7ed;border:1px solid #e1eddb;padding:17px;border-radius:11px;margin:18px auto}.roulette-result h3{margin:4px 0}.roulette-result p{font-size:12px;color:#69816c;margin:5px 0 14px}.roulette-result .result-actions{display:flex;flex-wrap:wrap;gap:7px}.roulette-filter{display:flex;gap:15px;justify-content:center;flex-wrap:wrap;font-size:11px;color:#687a69;margin-top:25px}.roulette-filter label{display:flex;align-items:center;gap:6px}.saved-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:13px;margin:20px 0}.saved-card{border:1px solid var(--line);background:#fffefa;border-radius:14px;padding:22px}.saved-card h3{font-size:23px;margin:5px 0}.saved-card p{font-size:12px;color:#849184}.saved-card .row-btns{display:flex;gap:8px;margin-top:17px;flex-wrap:wrap}.saved-empty{background:#fffefa;padding:45px 20px;text-align:center;border-radius:13px;border:1px dashed var(--line);grid-column:1/-1;color:#869487}.calendar-connect{display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;margin:28px 0;border-radius:16px;background:#e8f0e1;padding:24px}.calendar-connect h3{margin:5px 0 7px}.calendar-connect p{color:#778776;max-width:550px;margin:0 0 11px;font-size:12px}.calendar-connect small{color:#67825e}.calendar-controls{display:flex;flex-wrap:wrap;gap:8px}.clashes{flex-basis:100%;font-size:12px;color:#5b715d}.clash-item{margin:7px 0;padding:8px 11px;background:#fffefa;border-radius:8px}.toast{position:fixed;z-index:2000;bottom:30px;left:50%;transform:translate(-50%,120px);background:#183d2d;color:#fff;border-radius:10px;padding:12px 19px;font-size:12px;box-shadow:0 8px 25px #112f2460;transition:transform .25s;max-width:min(420px,90vw);text-align:center;pointer-events:none}.toast.show{transform:translate(-50%,0)}.mobile-nav{display:none}
@@ -29,8 +29,43 @@
 @media(max-width:1000px){.route-layout{grid-template-columns:minmax(0,1fr)}.route-sidebar{order:2;min-height:0;max-height:none}.map-wrap{order:1;min-height:60vh}.map-wrap #map{height:65vh;min-height:510px}}
 @media(max-width:800px){.map-page-intro{margin:3px 0 13px}.map-page-intro p{display:none}.page{padding-top:12px}.route-layout{gap:12px}.map-wrap #map{height:61vh;min-height:430px}.map-wrap{min-height:430px}.map-search-overlay{left:11px;right:11px;top:12px}.map-filter-overlay{left:11px;top:77px}.map-count-pill{left:11px}.map-wrap .leaflet-bottom.leaflet-right{bottom:38px}}
 @media(max-width:490px){.map-page-intro h1{font-size:37px}.main{padding:0 10px}.map-wrap{border-radius:13px;min-height:480px}.map-wrap #map{height:calc(100dvh - 265px);min-height:480px;max-height:680px}.map-search-box{padding:5px 5px 5px 10px;gap:6px;border-radius:12px}.map-search-icon{font-size:22px}.map-search-box input{font-size:13px}.map-search-box button{font-size:11px;padding:10px 8px}.map-search-overlay #use-my-location{width:42px;height:42px;border-radius:12px;font-size:25px}.map-filter-overlay{top:65px;gap:5px}.map-radius-field,.map-filter-overlay>button{font-size:10px;padding:8px 10px}.map-count-pill{bottom:70px;font-size:10px;padding:8px 10px}.map-footer{font-size:9px;padding:9px;bottom:9px}.roulette-location-panel{padding:16px 14px}.roulette-location-header{align-items:flex-start;flex-direction:column}.roulette-location-header button{width:100%}.roulette-radius-control{align-items:flex-start;flex-direction:column;gap:6px}.roulette-radius-control select{max-width:100%;width:100%}.planner-options summary{font-size:12px;padding:16px}.planner-options>.section-heading{padding:4px 14px 12px}.planner-options>.details-card{padding:14px}}
+
+/* v3: smooth vector map, clear named pub directory and on-map walking routes */
+.map-wrap #map{background:#e5ede8}
+.maplibregl-map{font-family:'DM Sans',system-ui,sans-serif}
+.map-wrap .maplibregl-control-container{z-index:2}
+.map-wrap .maplibregl-ctrl-bottom-left{bottom:52px;left:5px}
+.map-wrap .maplibregl-ctrl-attrib{background:#ffffffdd;font-size:9px}
+.map-wrap .maplibregl-ctrl-bottom-right{bottom:57px;right:9px}
+.map-wrap .maplibregl-ctrl-group{border-radius:12px;overflow:hidden;box-shadow:0 3px 14px #20302a30}
+.map-wrap .maplibregl-popup-content{padding:15px;border-radius:13px;box-shadow:0 7px 32px #20362a30}
+.map-wrap .maplibregl-popup-close-button{font-size:20px;padding:2px 8px}
+.map-wrap .maplibregl-popup-content .pub-popup{max-width:245px;padding-right:9px}
+.map-wrap .maplibregl-marker{cursor:pointer;z-index:1}
+.pub-map-marker{width:38px;height:38px;display:grid;place-items:center;outline-offset:3px}
+.pub-map-marker:focus-visible{outline:3px solid #2277de}
+.marker-pin{width:30px;height:30px;box-shadow:0 4px 11px #13261d70;border-radius:50% 50% 50% 5px;display:grid;place-items:center;transform:rotate(-45deg);background:#156c47;border:2.5px solid #fff;color:#fff;font-size:14px;line-height:1}
+.marker-pin .marker-content{transform:rotate(45deg);display:block}
+.marker-pin.selected{width:35px;height:35px;background:#f7b64d;color:#263327;font-size:15px}
+.marker-pin:focus-visible{outline:4px solid #236fee;outline-offset:3px}
+.map-error{padding:95px 24px;text-align:center;color:#445349;font-weight:700}
+.map-error-notice{position:absolute;top:165px;left:50%;transform:translateX(-50%);z-index:502;background:#fffefa;padding:13px;border-radius:10px;max-width:270px;text-align:center;box-shadow:0 4px 16px #0002}
+.pub-results{margin-top:13px;background:#fffefa;border:1px solid var(--line);border-radius:13px;padding:15px}
+.pub-results-head{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:12px}
+.pub-results-head strong{font-size:13px;color:#194531}
+.pub-results-head span{color:#82948a;font-size:10px;text-align:right}
+.pub-results-list{display:flex;flex-wrap:wrap;gap:8px;max-height:170px;overflow:auto}
+.pub-result{border:1px solid #e0e8dc;background:#f8fbf3;border-radius:10px;min-width:180px;max-width:260px;flex:1;display:flex;gap:9px;align-items:center;text-align:left;padding:9px;color:#153828}
+.pub-result:hover{border-color:#86af8c;background:#eff8e8}
+.pub-result b{display:block;font-size:11px;line-height:1.25}
+.pub-result small{display:block;font-size:9px;color:#7b8b81;margin-top:3px}
+.pub-result-arrow{margin-left:auto;font-size:17px;color:#2b8a65}
+.pub-result-icon{font-size:16px}
+.no-pubs{font-size:11px;color:#6b8570;margin:4px 0}
+.pub-popup .popup-selected{color:#216848;font-weight:900}
+@media(max-width:490px){.pub-results{padding:12px}.pub-results-list{max-height:165px}.pub-result{min-width:130px}.map-wrap .maplibregl-ctrl-bottom-left{bottom:54px}}
 </style>
-  <title>Pint Planner | Explore pubs near you</title>
+  <title>Pint Planner | Pub map & walking routes</title>
 </head>
 <body>
 <div class="app-shell">
@@ -48,17 +83,18 @@
     <header class="topbar"><span class="eyebrow topbar-tag">GOOD PLANS. BETTER PINTS.</span><div class="topbar-right"><span id="today-text"></span><span class="circle-icon">🍻</span></div></header>
     <section class="page active" id="page-planner" aria-labelledby="planner-heading">
       <div class="map-page-intro"><div><span class="eyebrow">YOUR LOCAL PUB MAP · PINT PLANNER</span><h1>Find your next <em>pint.</em></h1></div><p>Explore nearby pubs, tap to add stops and plan the perfect crawl.</p></div>
-      <div id="route-builder" class="route-section"><div class="section-heading"><div><span class="eyebrow">THE PUB MAP</span><h2>Explore & build your route.</h2></div><span class="small-note">Tap a beer marker to add a stop</span></div>
+      <div id="route-builder" class="route-section"><div class="section-heading"><div><span class="eyebrow">THE PUB MAP</span><h2>Explore & build your route.</h2></div><span class="small-note">Tap a pub pin to add a stop</span></div>
       <div class="route-layout">
         <div class="route-sidebar">
           <div class="route-subhead"><div><span class="eyebrow">YOUR LINE-UP</span><h3>The stops</h3></div><span class="count-pill" id="stop-count">0 pubs</span></div>
           <div id="stops-list" class="stops-list"><div class="empty-stops"><span class="empty-illustration">♧</span><b>No pubs on the list. Yet.</b><p>Find nearby pubs and tap a marker to add it to your crawl.</p></div></div>
-          <div class="route-actions"><button class="btn btn-dark full" id="calculate-route">Calculate walking route <span>→</span></button><button class="btn btn-outline full" id="save-plan">Save this crawl</button></div>
+          <div class="route-actions"><button class="btn btn-dark full" id="calculate-route">Calculate & show route <span>→</span></button><button class="btn btn-outline full" id="save-plan">Save this crawl</button></div>
           <div class="time-summary" id="time-summary" aria-live="polite"></div>
         </div>
-        <div class="map-wrap"><div id="map" role="application" aria-label="Map showing nearby pubs and your planned crawl"></div><div class="map-search-overlay"><div class="map-search-box"><span aria-hidden="true" class="map-search-icon">⌕</span><input id="place-input" type="search" value="Newcastle upon Tyne" placeholder="Search a town or city" aria-label="Find a town or city" autocomplete="address-level2"><button type="button" id="find-place" aria-label="Find town on map">Search ↗</button></div><button type="button" id="use-my-location" title="Use my current location" aria-label="Centre map on my current location">⌖</button></div><div class="map-filter-overlay"><label class="map-radius-field">⌖ Search radius <select id="pub-radius" aria-label="Map pub search radius"><option value="500">500 m</option><option value="1000">1 km</option><option value="2500" selected>2.5 km</option><option value="5000">5 km</option></select></label><button type="button" id="refresh-map-pubs">↻ Refresh pubs</button></div><div class="map-count-pill" id="pub-map-count">Finding nearby pubs…</div><div class="map-footer"><span><i class="legend-dot green"></i> 🍺 Pubs</span><span><i class="legend-dot orange"></i> Numbered crawl stops</span><span class="map-hint">Tap a beer pin to see details · tap a blank spot to add a custom stop</span></div></div>
+        <div class="map-wrap"><div id="map" role="application" aria-label="Map showing nearby pubs and your planned crawl"></div><div class="map-search-overlay"><div class="map-search-box"><span aria-hidden="true" class="map-search-icon">⌕</span><input id="place-input" type="search" value="Newcastle upon Tyne" placeholder="Search a town or city" aria-label="Find a town or city" autocomplete="address-level2"><button type="button" id="find-place" aria-label="Find town on map">Search ↗</button></div><button type="button" id="use-my-location" title="Use my current location" aria-label="Centre map on my current location">⌖</button></div><div class="map-filter-overlay"><label class="map-radius-field">⌖ Search radius <select id="pub-radius" aria-label="Map pub search radius"><option value="500">500 m</option><option value="1000">1 km</option><option value="2500" selected>2.5 km</option><option value="5000">5 km</option></select></label><button type="button" id="refresh-map-pubs">⌕ Search this area</button></div><div class="map-count-pill" id="pub-map-count" aria-live="polite">Finding nearby pubs…</div><div class="map-footer"><span><i class="legend-dot green"></i> 🍺 Pubs</span><span><i class="legend-dot orange"></i> Numbered crawl stops</span><span class="map-hint">Tap a pin to add a pub · 2+ stops to draw walking route</span></div></div>
       </div>
       </div>
+      <div class="pub-results" id="pub-results" aria-live="polite"><div class="pub-results-head"><strong>🍺 Pubs around your map</strong><span>Loading nearby places…</span></div><div id="pub-results-list" class="pub-results-list"></div></div>
       <details class="planner-options"><summary><span>⚙️</span> Set your date, pint pace & group size <span class="summary-chevron">⌄</span></summary>
       <div class="section-heading"><div><span class="eyebrow">PLAN YOUR DAY</span><h2>Timing & group settings.</h2></div><span class="small-note">Everything's adjustable later</span></div>
       <div class="details-card">
@@ -83,7 +119,7 @@
 </div>
 <nav class="mobile-nav" aria-label="Mobile navigation"><button class="mobile-nav-btn active" data-tab="planner">⌁ <span>Planner</span></button><button class="mobile-nav-btn" data-tab="roulette">✳ <span>Roulette</span></button><button class="mobile-nav-btn" data-tab="saved">▤ <span>Plans</span></button></nav>
 <div id="toast" class="toast" role="status" aria-live="polite"></div>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
 <script src="https://accounts.google.com/gsi/client" async defer></script>
 <script>
 // Optional: create a Web OAuth client in Google Cloud and paste its PUBLIC client ID here.
@@ -119,7 +155,11 @@ const state = {
   pubAbort: null,
   pubRequestId: 0,
   radiusCircle: null,
-  locationDot: null
+  locationDot: null,
+  mapMarkers: [],
+  markerById: new Map(),
+  mapReady: false,
+  routeRequestId: 0
 };
 let toastTimer, weatherTimer;
 const clean = (x) => String(x ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -151,60 +191,144 @@ function durationInfo(){
   const distance=legs.reduce((sum,l)=>sum+l.distance,0);
   return {legs,walkingSec,pubMinutes,total,start,end,distance,valid:!Number.isNaN(start.getTime())};
 }
-function clearRoute(){state.route=null;if(state.line&&state.map){state.map.removeLayer(state.line);state.line=null;}updateUI();}
+function clearRoute(){state.route=null;state.routeRequestId++;updateUI();}
 function getPubFromOsm(el){const tags=el.tags||{};const lat=el.lat??el.center?.lat,lon=el.lon??el.center?.lon;
   if(typeof lat!=='number'||typeof lon!=='number'||!tags.name) return null;
   const addr=[tags['addr:housenumber'],tags['addr:street'],tags['addr:city']].filter(Boolean).join(' ');
   return {id:el.type+'-'+el.id,name:tags.name.trim().slice(0,120),lat,lon,type:tags.amenity,addr,hours:tags.opening_hours||'',website:tags.website||''};
 }
+// New map engine: MapLibre + the community-hosted OpenFreeMap vector style.
+// No tile API key; attribution is provided by the style and remains visible.
+function mapCircleGeoJson(lat,lon,radius){
+  const points=[];
+  for(let i=0;i<=64;i++){
+    const a=2*Math.PI*i/64;
+    points.push([lon+(radius*Math.sin(a))/(111320*Math.cos(lat*Math.PI/180)),lat+(radius*Math.cos(a))/111320]);
+  }
+  return {type:'Feature',properties:{},geometry:{type:'Polygon',coordinates:[points]}};
+}
+const emptyLine={type:'Feature',properties:{},geometry:{type:'LineString',coordinates:[]}};
+function updateMapOverlays(){
+  if(!state.map||!state.mapReady)return;
+  const map=state.map;
+  const rad=mapCircleGeoJson(state.centre.lat,state.centre.lon,getSettings().radius);
+  if(!map.getSource('search-circle')){
+    map.addSource('search-circle',{type:'geojson',data:rad});
+    map.addLayer({id:'search-circle-fill',type:'fill',source:'search-circle',paint:{'fill-color':'#30a46c','fill-opacity':0.045}});
+    map.addLayer({id:'search-circle-border',type:'line',source:'search-circle',paint:{'line-color':'#218257','line-opacity':.38,'line-width':1.5,'line-dasharray':[4,3]}});
+  }else map.getSource('search-circle').setData(rad);
+  const coords=state.route?.geometry?.coordinates || (state.stops.length>1?state.stops.map(p=>[p.lon,p.lat]):[]);
+  const shape=coords.length>=2?{type:'Feature',properties:{},geometry:{type:'LineString',coordinates:coords}}:emptyLine;
+  if(!map.getSource('crawl-route')){
+    map.addSource('crawl-route',{type:'geojson',data:shape});
+    map.addLayer({id:'crawl-route-outline',type:'line',source:'crawl-route',layout:{'line-cap':'round','line-join':'round'},paint:{'line-color':'#ffffff','line-width':9,'line-opacity':.95}});
+    map.addLayer({id:'crawl-route-line',type:'line',source:'crawl-route',layout:{'line-cap':'round','line-join':'round'},paint:{'line-color':'#2777d9','line-width':5,'line-opacity':.96}});
+  }else map.getSource('crawl-route').setData(shape);
+  map.setPaintProperty('crawl-route-line','line-color',state.route?'#2277de':'#6f8daa');
+  map.setPaintProperty('crawl-route-line','line-dasharray',state.route?[1,0]:[1.8,2.5]);
+  map.setPaintProperty('crawl-route-outline','line-opacity',state.route?.geometry?0.97:0.65);
+}
+function pubPopup(pub,index){
+  const selected=Boolean(index)||pub.custom;
+  const action=selected?'<p class="popup-selected">✓ On your pub crawl</p>':`<button class="popup-add" data-pub-add="${clean(pub.id)}">+ Add to crawl</button>`;
+  const box=document.createElement('div');box.className='pub-popup';
+  box.innerHTML=`<h4>${clean(pub.name)}</h4><p>${clean(pub.type==='biergarten'?'Beer garden':pub.type==='bar'?'Bar':pub.custom?'Custom stop':'Pub')}${pub.addr?' · '+clean(pub.addr):''}</p><p>${pub.hours?'Listed hours: '+clean(pub.hours):'Opening hours not verified — check before you go.'}</p>${action}`;
+  const btn=box.querySelector('[data-pub-add]');if(btn)btn.addEventListener('click',()=>addStop(pub.id));
+  return box;
+}
 function renderMap(){
-  if(!state.map||!window.L)return;
-  state.markers.clearLayers();
+  if(!state.map||!window.maplibregl)return;
   const selected=new Map(state.stops.map((p,i)=>[p.id,i+1]));
-  const showRadius=getSettings().radius;
+  state.mapMarkers.forEach(marker=>marker.remove());state.mapMarkers=[];state.markerById.clear();
   let count=0;
-  const pin=(pub,index)=>{
-    const isSelected=!!index;
-    const icon=L.divIcon({className:'',html:`<div class="marker-pin${isSelected?' selected':''}${pub.custom?' custom':''}"><span class="marker-content">${isSelected?index:'🍺'}</span></div>`,iconSize:isSelected?[32,32]:[28,28],iconAnchor:isSelected?[16,31]:[14,27],popupAnchor:[0,-25]});
-    const marker=L.marker([pub.lat,pub.lon],{icon,title:pub.name,alt:'Pub: '+pub.name,riseOnHover:true});
-    const id=JSON.stringify(pub.id);
-    marker.bindPopup(`<div class="pub-popup"><h4>${clean(pub.name)}</h4><p>${clean(pub.type==='biergarten'?'Beer garden':pub.type==='bar'?'Bar':pub.custom?'Custom stop':'Pub')}${pub.addr?' · '+clean(pub.addr):''}</p><p>${pub.hours?'Listed opening hours: '+clean(pub.hours):'Opening hours not verified — please check.'}</p>${pub.custom||isSelected?'<p>On your crawl ✓</p>':`<button class="popup-add" onclick="window.PintPlanner.add(${clean(id)})">Add to crawl +</button>`}</div>`);
-    state.markers.addLayer(marker);
-  };
+  function pin(pub,index){
+    const el=document.createElement('div');
+    el.className='marker-pin'+(index?' selected':'')+(pub.custom?' custom':'');
+    el.setAttribute('aria-label',(index?'Crawl stop '+index+': ':'Pub: ')+pub.name);
+    el.setAttribute('title',pub.name);
+    el.innerHTML=`<span class="marker-content">${index||'🍺'}</span>`;
+    const wrapper=document.createElement('div');wrapper.className='pub-map-marker';wrapper.appendChild(el);
+    const marker=new maplibregl.Marker({element:wrapper,anchor:'bottom'})
+      .setLngLat([pub.lon,pub.lat])
+      .setPopup(new maplibregl.Popup({offset:22,maxWidth:'270px'}).setDOMContent(pubPopup(pub,index)))
+      .addTo(state.map);
+    wrapper.setAttribute('role','button');wrapper.setAttribute('tabindex','0');wrapper.setAttribute('aria-label',el.getAttribute('aria-label'));
+    wrapper.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();marker.togglePopup();}});
+    state.mapMarkers.push(marker);state.markerById.set(pub.id,marker);
+  }
   for(const pub of state.pubs){
-    if(distanceMeters(pub,state.centre)>showRadius+25 && !selected.has(pub.id))continue;
+    if(distanceMeters(pub,state.centre)>getSettings().radius+25&&!selected.has(pub.id))continue;
     if(!selected.has(pub.id))count++;
     pin(pub,selected.get(pub.id));
   }
-  for(const stop of state.stops.filter(p=>!state.pubs.some(x=>x.id===p.id)))pin(stop,selected.get(stop.id));
-  $('pub-map-count').textContent=`${count} nearby ${count===1?'pub':'pubs'} · ${state.stops.length} selected`;
-  if(state.radiusCircle){state.map.removeLayer(state.radiusCircle);state.radiusCircle=null;}
-  state.radiusCircle=L.circle([state.centre.lat,state.centre.lon],{radius:showRadius,color:'#246347',weight:1,opacity:.35,fillColor:'#65ba7b',fillOpacity:.05,interactive:false}).addTo(state.map);
-  if(state.locationDot){state.map.removeLayer(state.locationDot);state.locationDot=null;}
-  if(state.locationPosition){state.locationDot=L.marker([state.locationPosition.lat,state.locationPosition.lon],{icon:L.divIcon({className:'',html:'<span class="gps-pulse"></span>',iconSize:[18,18],iconAnchor:[9,9]}),title:'Your current location',zIndexOffset:1000}).addTo(state.map);state.locationDot.bindPopup('Your current location');}
+  for(const stop of state.stops.filter(p=>!state.markerById.has(p.id)))pin(stop,selected.get(stop.id));
+  if(state.locationDot){state.locationDot.remove();state.locationDot=null;}
+  if(state.locationPosition){
+    const el=document.createElement('span');el.className='gps-pulse';el.title='Your current location';
+    state.locationDot=new maplibregl.Marker({element:el}).setLngLat([state.locationPosition.lon,state.locationPosition.lat]).addTo(state.map);
+  }
+  $('pub-map-count').textContent=state.loadingPubs?'Finding nearby pubs…':`${count} nearby ${count===1?'pub':'pubs'} · ${state.stops.length} selected`;
+  updateMapOverlays();renderPubResults();
+}
+function focusPub(id){
+  const marker=state.markerById.get(id);
+  const p=state.pubs.find(x=>x.id===id)||state.stops.find(x=>x.id===id);
+  if(!marker||!p)return;
+  if(document.querySelector('#page-planner:not(.active)'))setTab('planner');
+  state.map.flyTo({center:[p.lon,p.lat],zoom:Math.max(state.map.getZoom(),15),essential:true});
+  marker.togglePopup();
+  document.querySelector('.map-wrap').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function renderPubResults(){
+  const root=$('pub-results-list');if(!root)return;
+  const nearby=state.pubs.filter(p=>distanceMeters(p,state.centre)<=getSettings().radius+25);
+  const head=document.querySelector('.pub-results-head span');
+  head.textContent=state.loadingPubs?'Looking for places…':`${nearby.length} found · tap a name to see it on the map`;
+  if(!nearby.length){
+    root.innerHTML=`<p class="no-pubs">${state.loadingPubs?'Loading pubs from OpenStreetMap…':'No pubs loaded here. Try Search this area, a wider radius or another town.'}</p>`;
+    return;
+  }
+  root.innerHTML=nearby.slice(0,18).map(p=>`<button type="button" class="pub-result" data-pub-focus="${clean(p.id)}"><span class="pub-result-icon">🍺</span><span><b>${clean(p.name)}</b><small>${Math.round(distanceMeters(p,state.centre))} m from map centre</small></span><span class="pub-result-arrow">↗</span></button>`).join('');
+  root.querySelectorAll('[data-pub-focus]').forEach(btn=>btn.addEventListener('click',()=>focusPub(btn.dataset.pubFocus)));
 }
 function initialiseMap(){
-  if(!window.L){$('map').textContent='Map library could not load. Check your internet connection.';return;}
-  state.map=L.map('map',{zoomControl:false,scrollWheelZoom:false}).setView([state.centre.lat,state.centre.lon],14);
-  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'© OpenStreetMap contributors'}).addTo(state.map);
-  L.control.zoom({position:'bottomright'}).addTo(state.map);
-  state.markers=L.layerGroup().addTo(state.map);
-  state.map.on('click',e=>{
-    const name=window.prompt('Add a custom stop here? Enter a name, or Cancel to keep browsing:');
-    if(name&&name.trim()){
-      state.stops.push({id:'custom-'+Date.now(),name:name.trim().slice(0,100),lat:e.latlng.lat,lon:e.latlng.lng,type:'custom',custom:true});
-      clearRoute();toast('Custom stop added to your crawl.');
-    }
-  });
-  setTimeout(()=>state.map.invalidateSize(),120);
+  if(!window.maplibregl){$('map').innerHTML='<div class="map-error">The map could not start. Check your connection and reload.</div>';return;}
+  try{
+    state.map=new maplibregl.Map({container:'map',style:'https://tiles.openfreemap.org/styles/liberty',center:[state.centre.lon,state.centre.lat],zoom:14,attributionControl:true,pitchWithRotate:false,dragRotate:false,fadeDuration:0});
+    state.map.addControl(new maplibregl.NavigationControl({showCompass:false}),'bottom-right');
+    state.map.on('load',()=>{state.mapReady=true;updateMapOverlays();renderMap();const err=$('map-error-notice');if(err)err.remove();});
+    state.map.on('click',e=>{
+      // Clicking empty space gives the user an optional custom stop.
+      if(e.originalEvent?.target?.closest?.('.maplibregl-marker'))return;
+      const name=window.prompt('Add a custom stop here? Enter a name or Cancel to keep browsing:');
+      if(name&&name.trim()){
+        state.stops.push({id:'custom-'+Date.now(),name:name.trim().slice(0,100),lat:e.lngLat.lat,lon:e.lngLat.lng,type:'custom',custom:true});
+        clearRoute();toast('Custom stop added to your crawl.');
+      }
+    });
+    state.map.on('error',e=>{console.warn('Map source issue:',e.error||e);});
+    setTimeout(()=>state.map?.resize(),170);
+    // A clear message if a connection is too poor to receive the map style.
+    setTimeout(()=>{
+      if(!state.mapReady&&!document.getElementById('map-error-notice')){
+        const n=document.createElement('div');n.id='map-error-notice';n.className='map-error-notice';n.textContent='Map still loading? Check your signal and try refreshing the page.';
+        document.querySelector('.map-wrap').appendChild(n);
+      }
+    },14000);
+  }catch(e){console.warn(e);$('map').innerHTML='<div class="map-error">Map unavailable. Try reloading on Wi-Fi or 5G.</div>';}
 }
 function setCentre(place,fromGps=false){
   state.centre={lat:place.lat,lon:place.lon,name:place.name};$('place-input').value=place.name;
   if(fromGps){state.locationPosition={lat:place.lat,lon:place.lon,accuracy:place.accuracy||null};state.locationTime=Date.now();}
-  // Searching a different city does not silently change the stored GPS position.
-  if(state.map){state.map.setView([place.lat,place.lon],place.name==='Near me'?15:14);state.map.invalidateSize();}
+  if(state.map){state.map.flyTo({center:[place.lon,place.lat],zoom:place.name==='Near me'?15:14,essential:true});state.map.resize();}
   if(!state.pubSearch||distanceMeters(state.centre,state.pubSearch)>50){state.pubs=[];state.pubSearch=null;}
   renderMap();refreshWeather();updateRouletteLocation();
+}
+function searchMapArea(){
+  if(state.map){const pt=state.map.getCenter();const centre={lat:pt.lat,lon:pt.lng,name:'Map area'};
+    if(distanceMeters(centre,state.centre)>100){state.centre=centre;state.pubs=[];state.pubSearch=null;refreshWeather();}
+  }
+  loadPubs(getSettings().radius);
 }
 async function findPlace(){
   const q=$('place-input').value.trim();if(q.length<2){toast('Enter a town or city to search.');return;}
@@ -265,31 +389,59 @@ async function loadPubs(requiredRadius){
   if(state.pubSearch&&Math.abs(state.pubSearch.lat-lat)<.00035&&Math.abs(state.pubSearch.lon-lon)<.00035&&state.pubSearch.radius>=radius){renderMap();updateRouletteLocation();return true;}
   const requestId=++state.pubRequestId;
   if(state.pubAbort)state.pubAbort.abort();
-  const controller=new AbortController();state.pubAbort=controller;
   const key=PUB_CACHE_PREFIX+[lat.toFixed(3),lon.toFixed(3),radius].join('-');
   function receive(pubs){
     if(requestId!==state.pubRequestId)return false;
     state.pubs=pubs.sort((a,b)=>distanceMeters(a,state.centre)-distanceMeters(b,state.centre));
-    state.pubSearch={lat,lon,radius};renderMap();updateRouletteLocation();
+    state.pubSearch={lat,lon,radius};state.loadingPubs=false;
+    renderMap();updateRouletteLocation();
     $('roulette-status').textContent=`${state.pubs.length} venues mapped here. Choose a roulette radius and spin.`;
     return true;
   }
   try{const entry=JSON.parse(sessionStorage.getItem(key)||'null');if(entry&&Date.now()-entry.t<30*60*1000){return receive(entry.pubs);}}catch{}
   state.loadingPubs=true;
   const btn=$('nearby-search');btn.disabled=true;btn.textContent='Searching for pubs…';
-  $('pub-map-count').textContent='Looking for pub pins…';
-  const query=`[out:json][timeout:25];(node(around:${radius},${lat},${lon})["amenity"~"^(pub|bar|biergarten)$"];way(around:${radius},${lat},${lon})["amenity"~"^(pub|bar|biergarten)$"];);out center tags;`;
+  $('pub-map-count').textContent='Finding nearby pub pins…';renderPubResults();
+  // All node/way/relation pub geometries. Use the centre of large OSM buildings.
+  const query=`[out:json][timeout:20];nwr(around:${radius},${lat},${lon})["amenity"~"^(pub|bar|biergarten)$"];out center tags;`;
+  const servers=[
+    'https://overpass.private.coffee/api/interpreter',
+    'https://overpass-api.de/api/interpreter',
+    'https://overpass.nchc.org.tw/api/interpreter'
+  ];
+  let error=null;
   try{
-    const response=await fetch('https://overpass-api.de/api/interpreter',{method:'POST',body:new URLSearchParams({data:query}),signal:controller.signal});
-    if(!response.ok)throw new Error(response.status===429?'Pub search is busy. Try again shortly.':'Pub search is temporarily unavailable.');
-    const data=await response.json();
-    const distinct=new Map();(data.elements||[]).map(getPubFromOsm).filter(Boolean).forEach(p=>{const k=p.name.toLowerCase()+'-'+p.lat.toFixed(3)+'-'+p.lon.toFixed(3);if(!distinct.has(k))distinct.set(k,p);});
-    const pubs=[...distinct.values()].filter(p=>distanceMeters(p,{lat,lon})<=radius+30);
-    try{sessionStorage.setItem(key,JSON.stringify({t:Date.now(),pubs}));}catch{}
-    if(receive(pubs))toast(pubs.length?`${pubs.length} places found. Tap a beer pin to add one.`:'No mapped pubs in this radius. Try a wider search.');
-    return true;
-  }catch(e){if(e.name!=='AbortError'&&requestId===state.pubRequestId){$('pub-map-count').textContent='Pub search failed · Tap refresh';toast(e.message||'Could not load pubs.');}return false;}
-  finally{if(requestId===state.pubRequestId){btn.disabled=false;btn.innerHTML='Find nearby pubs <span>→</span>';state.loadingPubs=false;}}
+    for(let i=0;i<servers.length;i++){
+      if(requestId!==state.pubRequestId)return false;
+      const controller=new AbortController();state.pubAbort=controller;
+      const timer=setTimeout(()=>controller.abort(),i===0?10500:11000);
+      try{
+        if(i>0)$('pub-map-count').textContent='First pub service busy — trying another…';
+        const response=await fetch(servers[i],{method:'POST',body:new URLSearchParams({data:query}),signal:controller.signal});
+        if(!response.ok)throw new Error('Pub search returned HTTP '+response.status);
+        const data=await response.json();
+        if(!Array.isArray(data.elements))throw new Error('Unexpected response from pub search');
+        const distinct=new Map();data.elements.map(getPubFromOsm).filter(Boolean).forEach(p=>{
+          const k=p.name.toLowerCase()+'-'+p.lat.toFixed(3)+'-'+p.lon.toFixed(3);
+          if(!distinct.has(k))distinct.set(k,p);
+        });
+        const pubs=[...distinct.values()].filter(p=>distanceMeters(p,{lat,lon})<=radius+30);
+        try{sessionStorage.setItem(key,JSON.stringify({t:Date.now(),pubs}));}catch{}
+        if(receive(pubs))toast(pubs.length?`${pubs.length} pubs found — tap a green pin or pub name.`:'No mapped pubs here. Try a wider radius.');
+        return true;
+      }catch(e){error=e;console.warn('Pub service unavailable:',servers[i],e.message);}
+      finally{clearTimeout(timer);}
+    }
+    if(requestId===state.pubRequestId){
+      $('pub-map-count').textContent='Pub search unavailable · Try Search this area again';
+      toast('Pub data is temporarily unavailable. Please try again.');
+    }
+    return false;
+  }finally{
+    if(requestId===state.pubRequestId){
+      btn.disabled=false;btn.innerHTML='Find nearby pubs <span>→</span>';state.loadingPubs=false;renderPubResults();
+    }
+  }
 }
 function addStop(id){const pub=state.pubs.find(p=>p.id===id);if(!pub){toast('That pub is not in the current search.');return;}if(state.stops.some(s=>s.id===id)){toast('That pub is already on the route.');return;}state.stops.push({...pub});clearRoute();toast(pub.name+' added!');}
 function moveStop(index,dir){const target=index+dir;if(target<0||target>=state.stops.length)return;[state.stops[index],state.stops[target]]=[state.stops[target],state.stops[index]];clearRoute();}
@@ -307,23 +459,44 @@ function updateSummary(){
   const d=durationInfo(),root=$('time-summary');
   if(!state.stops.length){root.innerHTML='<h4>YOUR DAY AT A GLANCE</h4><p>Add a pub or two to see walking times, estimated drinks and your finish time.</p>';return;}
   const cfg=getSettings();const totalPints=state.stops.length*cfg.pints*cfg.group;
-  root.innerHTML=`<h4>YOUR DAY AT A GLANCE</h4><div class="summary-times"><div><span>Estimated finish</span><b>${d.valid?toClock(d.end):'—'}</b></div><div><span>Day out duration</span><b>${Math.floor(d.total/60)}h ${String(d.total%60).padStart(2,'0')}m</b></div><div><span>Walking</span><b>${Math.round(d.walkingSec/60)} min</b></div><div><span>Distance</span><b>${(d.distance/1000).toFixed(1)} km</b></div><div><span>Group pints (planned)</span><b>${totalPints}</b></div><div><span>Time in pubs</span><b>${d.pubMinutes} min</b></div></div><p>${state.route?'✓ Walking route calculated on mapped footpaths.':'ⓘ Walking is a rough estimate. Press Calculate walking route for mapped paths.'} Includes ${cfg.buffer} extra minutes per pub for ordering, loos etc. Travel to the first pub is not included.</p>`;
+  root.innerHTML=`<h4>YOUR DAY AT A GLANCE</h4><div class="summary-times"><div><span>Estimated finish</span><b>${d.valid?toClock(d.end):'—'}</b></div><div><span>Day out duration</span><b>${Math.floor(d.total/60)}h ${String(d.total%60).padStart(2,'0')}m</b></div><div><span>Walking</span><b>${Math.round(d.walkingSec/60)} min</b></div><div><span>Distance</span><b>${(d.distance/1000).toFixed(1)} km</b></div><div><span>Group pints (planned)</span><b>${totalPints}</b></div><div><span>Time in pubs</span><b>${d.pubMinutes} min</b></div></div><p>${state.route?'✓ Solid blue line = mapped walking route. Follow the path between numbered pubs.':'ⓘ Blue dashed line = straight-line preview. Press Calculate & show route for actual walking paths.'} Includes ${cfg.buffer} extra minutes per pub for ordering, loos etc. Travel to the first pub is not included.</p>`;
 }
 function updateUI(){renderStops();renderMap();updateSummary();updateRouletteLocation();if(state.weather)renderWeather(state.weather);}
+function zoomToCrawl(){
+  if(!state.map||state.stops.length<2)return;
+  const bounds=new maplibregl.LngLatBounds();
+  const c=state.route?.geometry?.coordinates || state.stops.map(p=>[p.lon,p.lat]);
+  for(const point of c)bounds.extend(point);
+  state.map.fitBounds(bounds,{padding:{top:165,bottom:85,left:45,right:45},maxZoom:16.5,duration:700});
+  document.querySelector('.map-wrap').scrollIntoView({behavior:'smooth',block:'start'});
+}
 async function calculateRoute(){
-  if(state.stops.length<2){toast('Add at least two pubs to calculate a walking route.');return;}
-  const button=$('calculate-route');button.disabled=true;button.textContent='Finding walking paths…';
+  if(state.stops.length<2){toast('Add at least two pubs to show a walking route.');return;}
+  const requestId=++state.routeRequestId;
+  const button=$('calculate-route');button.disabled=true;button.textContent='Drawing your walking route…';
   try{
     const coords=state.stops.map(p=>`${p.lon.toFixed(6)},${p.lat.toFixed(6)}`).join(';');
+    // This OSM community-hosted OSRM instance uses pedestrian paths, not driving roads.
     const url=`https://routing.openstreetmap.de/routed-foot/route/v1/driving/${coords}?overview=full&geometries=geojson&steps=false`;
-    const response=await fetch(url);if(!response.ok)throw new Error('Walking route service is unavailable.');const data=await response.json();
-    const route=data.routes?.[0];if(!route||!route.legs||route.legs.length!==state.stops.length-1)throw new Error('No continuous walking route could be found.');
+    const controller=new AbortController();
+    const timer=setTimeout(()=>controller.abort(),18000);
+    let response;
+    try{response=await fetch(url,{signal:controller.signal});}finally{clearTimeout(timer);}
+    if(!response.ok)throw new Error('The walking-route service is currently busy.');
+    const data=await response.json();
+    const route=data.routes?.[0];
+    if(!route||!route.geometry?.coordinates?.length||route.legs?.length!==state.stops.length-1)throw new Error('No walkable path could be calculated for these stops.');
+    if(requestId!==state.routeRequestId)return;
     state.route={legs:route.legs.map(l=>({distance:l.distance,duration:l.duration})),geometry:route.geometry};
-    if(state.line&&state.map)state.map.removeLayer(state.line);
-    if(state.map&&window.L){state.line=L.geoJSON(route.geometry,{style:{color:'#eb9b3d',weight:5,opacity:.95}}).addTo(state.map);state.map.fitBounds(state.line.getBounds().pad(.15));}
-    updateUI();toast('Walking route calculated! Times now use mapped footpaths.');
-  }catch(e){state.route=null;updateUI();toast((e.message||'Routing unavailable')+' Showing rough walking estimates instead.');}
-  finally{button.disabled=false;button.innerHTML='Calculate walking route <span>→</span>';}
+    updateUI();zoomToCrawl();
+    toast('Your walking route is drawn in blue. Times now use mapped footpaths.');
+  }catch(e){
+    if(requestId!==state.routeRequestId)return;
+    state.route=null;updateUI();zoomToCrawl();
+    toast((e.name==='AbortError'?'Walking-route service timed out.':e.message||'Route unavailable')+' Showing a dashed straight-line estimate instead.');
+  }finally{
+    if(requestId===state.routeRequestId){button.disabled=false;button.innerHTML='Calculate & show route <span>→</span>';}
+  }
 }
 async function refreshWeather(){
   const day=$('crawl-date').value;if(!/^\d{4}-\d{2}-\d{2}$/.test(day))return;
@@ -384,7 +557,7 @@ function loadSaved(id){const record=getSaved().find(x=>x.id===id);if(record)try{
 function renderSaved(){const root=$('saved-list');const records=getSaved();if(!records.length){root.innerHTML='<div class="saved-empty"><h3>No saved crawls yet.</h3><p>Build a route in the Planner and hit “Save this crawl”. It will show up here.</p></div>';return;}
   root.innerHTML=records.map(r=>`<article class="saved-card"><span class="eyebrow">SAVED CRAWL</span><h3>${clean(labelDate(r.payload?.settings?.date||''))}</h3><p>${clean(r.payload?.place?.name||'Your town')} · ${r.payload?.stops?.length||0} stops</p><div class="row-btns"><button class="btn btn-dark" onclick="window.PintPlanner.loadSaved(${clean(JSON.stringify(r.id))})">Open plan ↗</button><button class="btn btn-outline" onclick="window.PintPlanner.deleteSaved(${clean(JSON.stringify(r.id))})">Delete</button></div></article>`).join('');
 }
-function setTab(tab){if(!['planner','roulette','saved'].includes(tab))return;document.querySelectorAll('.page').forEach(el=>el.classList.toggle('active',el.id==='page-'+tab));document.querySelectorAll('[data-tab]').forEach(el=>el.classList.toggle('active',el.dataset.tab===tab));history.replaceState(null,'',location.pathname+location.search+'#'+tab);if(tab==='planner'&&state.map)setTimeout(()=>state.map.invalidateSize(),90);if(tab==='saved')renderSaved();window.scrollTo({top:0,behavior:'instant'});}
+function setTab(tab){if(!['planner','roulette','saved'].includes(tab))return;document.querySelectorAll('.page').forEach(el=>el.classList.toggle('active',el.id==='page-'+tab));document.querySelectorAll('[data-tab]').forEach(el=>el.classList.toggle('active',el.dataset.tab===tab));history.replaceState(null,'',location.pathname+location.search+'#'+tab);if(tab==='planner'&&state.map)setTimeout(()=>state.map.resize(),90);if(tab==='saved')renderSaved();window.scrollTo({top:0,behavior:'instant'});}
 async function spinRoulette(){
   if(state.spinning)return;
   const radius=Number($('roulette-radius').value);
@@ -428,12 +601,12 @@ function init(){
   initialiseMap();
   for(const button of document.querySelectorAll('[data-tab]'))button.addEventListener('click',()=>setTab(button.dataset.tab));
   $('find-place').addEventListener('click',findPlace);$('place-input').addEventListener('keydown',e=>{if(e.key==='Enter')findPlace();});
-  $('use-my-location').addEventListener('click',useLocation);$('roulette-use-location').addEventListener('click',useRouletteLocation);$('refresh-map-pubs').addEventListener('click',()=>loadPubs(getSettings().radius));$('nearby-search').addEventListener('click',()=>loadPubs(getSettings().radius));$('calculate-route').addEventListener('click',calculateRoute);
+  $('use-my-location').addEventListener('click',useLocation);$('roulette-use-location').addEventListener('click',useRouletteLocation);$('refresh-map-pubs').addEventListener('click',searchMapArea);$('nearby-search').addEventListener('click',()=>loadPubs(getSettings().radius));$('calculate-route').addEventListener('click',calculateRoute);
   $('save-plan').addEventListener('click',savePlan);$('share-plan').addEventListener('click',sharePlan);$('download-ics').addEventListener('click',downloadCalendar);$('google-add').addEventListener('click',addGoogleEvent);
   $('roulette-spin').addEventListener('click',spinRoulette);$('calendar-connect').addEventListener('click',connectCalendar);$('calendar-disconnect').addEventListener('click',disconnectCalendar);
   for(const id of ['crawl-date','start-time','group-size','pint-mins','pints-stop','stop-buffer'])$(id).addEventListener('change',()=>{clearRoute();if(id==='crawl-date'||id==='start-time')debounceWeather();});
   $('pub-radius').addEventListener('change',()=>{renderMap();loadPubs(getSettings().radius);});$('roulette-radius').addEventListener('change',()=>{updateRouletteLocation();if(state.locationPosition)loadPubs(Math.max(Number($('roulette-radius').value),getSettings().radius));});$('roulette-bars').addEventListener('change',updateRouletteLocation);$('roulette-exclude').addEventListener('change',updateRouletteLocation);
-  window.PintPlanner={add:addStop,remove:removeStop,move:moveStop,loadSaved,deleteSaved};
+  window.PintPlanner={add:addStop,remove:removeStop,move:moveStop,focus:focusPub,loadSaved,deleteSaved};
   const params=new URL(location.href).searchParams;
   if(params.has('plan')){try{applyPayload(decodePlan(params.get('plan')));}catch(e){toast('The shared plan link could not be read.');}}
   const hash=location.hash.slice(1);if(['planner','roulette','saved'].includes(hash))setTab(hash);
