@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#142a25" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="description" content="Pint Planner — build pub crawls with real walking routes, pint pace, weather forecasts and shareable plans." />
+  <link rel="apple-touch-icon" href="data:image/png;base64,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" />
+  <link rel="icon" type="image/png" href="data:image/png;base64,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" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoOrK1YyB5qZKj0=" crossorigin="" />
+  <style>
+:root{--ink:#152922;--muted:#69746d;--paper:#f8f7f2;--card:#fffefa;--line:#e2e6df;--green:#185e43;--lime:#dcf98d;--amber:#f9bf57;--cream:#f5f1e6;--shadow:0 14px 35px rgba(15,38,30,.06)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:var(--paper);font-family:'DM Sans',system-ui,-apple-system,sans-serif;font-size:14px;line-height:1.5}button,input,select{font:inherit}button{cursor:pointer}a{color:inherit}input,select{appearance:auto}em{font-style:normal;color:#bad579}h1,h2,h3,p{margin-top:0}h1,h2,h3{font-family:Outfit,'DM Sans',sans-serif;letter-spacing:-.045em}h2{font-size:32px;line-height:1.1;margin-bottom:0}h3{font-size:21px;margin-bottom:0}.eyebrow{font-size:10px;font-weight:900;letter-spacing:1.8px;color:#718074}.app-shell{display:flex;min-height:100vh}.sidebar{width:242px;position:fixed;inset:0 auto 0 0;background:#142a25;color:#f8fff2;display:flex;flex-direction:column;padding:34px 20px;z-index:1001}.brand{display:flex;align-items:center;gap:13px;text-decoration:none;margin:0 0 45px 12px}.brand-mark{background:#dbf38e;color:#183d2c;font-family:Outfit,sans-serif;font-weight:900;font-size:32px;width:51px;height:51px;display:grid;place-items:center;border-radius:14px;line-height:1}.brand-dot{color:#ef9b41}.brand-words{font:900 16px/.91 Outfit,sans-serif;letter-spacing:-.5px}.sidebar-top-label{font-size:9px;color:#82948b;letter-spacing:1px;font-weight:800;margin:0 0 18px 12px}.main-nav{display:flex;flex-direction:column;gap:5px}.nav-btn{width:100%;border:none;display:flex;align-items:center;gap:14px;border-radius:11px;padding:14px 14px;text-align:left;background:none;color:#b1c4ba;font-weight:800;font-size:13px}.nav-btn:hover{background:#23473a}.nav-btn.active{color:#1b3328;background:#def18f}.nav-emoji{font-size:20px;font-weight:600;width:23px;text-align:center}.sidebar-bottom{margin-top:auto;font-size:9px;letter-spacing:1.2px;font-weight:800;color:#d6ee97}.sidebar-bottom small{font-size:11px;letter-spacing:0;color:#91a39a;display:block;margin-top:8px;font-weight:500}.online-pip{display:inline-block;width:7px;height:7px;border-radius:100%;background:#d8ef8a;margin-right:5px}.main{max-width:1650px;min-width:0;flex:1;margin-left:242px;padding:0 44px}.topbar{height:84px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.topbar-right{display:flex;align-items:center;gap:20px;color:#6b7b70;font-size:12px;font-weight:700}.circle-icon{border-radius:50%;background:#e5eddb;width:34px;height:34px;display:grid;place-items:center}.page{display:none;padding-top:30px}.page.active{display:block}.hero{height:294px;background:#153e30;position:relative;border-radius:18px;overflow:hidden;color:#fff;padding:35px 43px;display:flex;align-items:center;justify-content:space-between}.hero:before{content:'';width:540px;height:540px;position:absolute;right:-170px;top:-200px;border:1px solid #63916e66;border-radius:50%}.hero:after{content:'';width:420px;height:420px;position:absolute;right:-110px;top:-142px;border:1px solid #63916e66;border-radius:50%}.hero-copy{z-index:2;position:relative;max-width:520px}.hero-kicker{color:#d2eb97;font-size:10px;letter-spacing:2px;font-weight:900}.hero-kicker span{margin-left:5px}.hero h1{font-weight:900;letter-spacing:-.075em;font-size:clamp(38px,4vw,61px);margin:12px 0 7px;line-height:.99}.hero h1 em{color:#e2f696}.hero p{color:#bed2c6;max-width:415px;margin-bottom:21px}.hero-action{display:inline-flex;align-items:center;gap:14px;text-decoration:none;color:#183929;background:#e0f394;border-radius:9px;font-weight:900;font-size:12px;padding:12px 18px}.hero-art{position:relative;align-self:stretch;width:230px;margin-right:10%}.pint-glow{position:absolute;width:280px;height:280px;background:#c7d87d25;filter:blur(20px);border-radius:100%;left:0;top:-20px}.pint-illustration{position:absolute;left:54px;top:43px;width:120px;height:179px;border:7px solid #f7f0de;border-top:0;border-radius:8px 8px 23px 23px;transform:rotate(-12deg);background:#e69a37;box-shadow:inset -19px 0 0 #ba7528,inset 12px 0 0 #f3bb5e,0 18px 30px #0002;z-index:2}.foam{height:36px;position:absolute;top:-21px;left:-9px;right:-7px;background:#fffae8;border-radius:20px 20px 11px 17px;z-index:2}.foam b{display:block;background:#fffae8;position:absolute;border-radius:50%;width:29px;height:29px;bottom:-10px;left:10px}.foam b:nth-child(2){left:48px;bottom:-5px;width:24px;height:24px}.foam b:nth-child(3){left:82px;bottom:-18px;width:21px;height:34px}.beer-handle{position:absolute;border:11px solid #f6eee1;border-left:0;right:-56px;top:25px;width:49px;height:100px;border-radius:0 45px 45px 0}.beer-liquid i{position:absolute;background:#fff4c14d;border-radius:50%;width:7px;height:14px;left:24px;top:62px}.beer-liquid i:nth-child(2){left:79px;top:90px}.beer-liquid i:nth-child(3){left:51px;top:122px}.hero-sticker{position:absolute;top:18px;left:166px;font-size:12px;line-height:1.05;transform:rotate(13deg);font-weight:900;color:#eced91}.section-heading{display:flex;justify-content:space-between;align-items:flex-end;margin:32px 0 18px}.section-heading .eyebrow,.forecast-title .eyebrow,.sharing-panel .eyebrow{display:block;margin-bottom:7px}.small-note{font-size:11px;color:#89938a}.details-card{border:1px solid var(--line);border-radius:17px;background:var(--card);padding:22px;box-shadow:var(--shadow)}.form-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px 14px}.field{display:flex;flex-direction:column;gap:7px;min-width:0}.field span{font-weight:800;font-size:12px}.field small{font-weight:500;font-size:10px;color:#9da49e}.field input,.field select{width:100%;min-width:0;border:1px solid #e0e5dd;background:#f7f8f3;color:#2d3e33;border-radius:9px;padding:12px 13px;outline-color:#88ae80;min-height:44px}.input-with-button{position:relative;display:flex;min-width:0}.input-with-button input{padding-right:62px}.input-action{position:absolute;right:6px;top:6px;border:0;background:#e3eed9;color:#285e43;font-weight:800;border-radius:7px;padding:7px 9px;font-size:11px}.details-footer{display:flex;align-items:center;justify-content:space-between;margin-top:21px;padding-top:19px;border-top:1px solid var(--line);gap:12px;font-size:11px;font-weight:700;color:#87918a}.green-check{color:#3d9268;font-weight:900}.btn{border:1px solid transparent;display:inline-flex;justify-content:center;align-items:center;gap:14px;min-height:43px;border-radius:9px;padding:11px 16px;white-space:nowrap;font-size:12px;font-weight:900;transition:transform .15s,background .15s;text-decoration:none}.btn:active{transform:scale(.98)}.btn-dark{background:#163e30;color:white}.btn-dark:hover{background:#27664c}.btn-outline{background:white;border-color:#d9e2d8;color:#19402f}.btn-outline:hover{background:#eef6e8}.btn-light{background:#eaf0e4;color:#294d39}.full{width:100%}.forecast-container{margin-top:38px}.forecast-title{display:flex;justify-content:space-between;align-items:end;margin-bottom:17px}.weather-provider{font-size:10px;color:#8e968d}.weather-panel{border:1px solid var(--line);border-radius:15px;background:#fffefa;padding:20px}.weather-loading{font-size:13px;color:#68756a}.weather-grid{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:1px;overflow:hidden;border-radius:12px;border:1px solid #e4e9dc;background:#e4e9dc}.weather-main{background:#e3f1db;padding:19px 20px;display:flex;gap:14px;align-items:center}.weather-symbol{font-size:46px}.weather-main b{font-size:20px;display:block;line-height:1.2;font-family:Outfit}.weather-main small,.weather-cell small{color:#718075;font-size:11px;display:block;margin-top:4px}.weather-cell{padding:20px;background:#fffefa}.weather-cell b{font-family:Outfit;font-size:24px;line-height:1}.weather-cell span{font-size:11px;font-weight:800;color:#536b58;display:block;margin-bottom:9px}.weather-caption{color:#8b9589;margin:12px 3px 0;font-size:11px}.route-section{margin-top:40px}.route-layout{display:grid;grid-template-columns:330px minmax(0,1fr);align-items:stretch;min-height:550px;gap:16px}.route-sidebar{background:#fffefa;border:1px solid var(--line);border-radius:16px;padding:19px;display:flex;flex-direction:column;min-height:490px;max-height:700px;overflow-y:auto}.route-subhead{display:flex;align-items:center;justify-content:space-between;margin-bottom:15px}.count-pill{background:#e7f3d5;border-radius:25px;padding:6px 10px;color:#467247;font-size:11px;font-weight:800}.stops-list{flex:1;min-height:140px}.empty-stops{text-align:center;border:1px dashed #d2dfd0;background:#fafcf7;border-radius:12px;padding:22px 10px;color:#8b998b}.empty-stops b{color:#37543f;display:block;font-size:13px}.empty-stops p{margin:7px auto 0;max-width:215px;font-size:11px}.empty-illustration{display:block;font-size:42px;color:#9fba8a;margin:0 0 7px}.stop-card{position:relative;display:flex;gap:10px;padding:11px 3px;border-bottom:1px solid var(--line)}.stop-index{display:grid;place-items:center;flex-shrink:0;width:29px;height:29px;border-radius:100%;background:#deedce;color:#1a6944;font-weight:900}.stop-info{flex:1;min-width:0}.stop-info strong{display:block;font-size:12px;overflow-wrap:anywhere}.stop-info small{color:#8a958a;font-size:10px;display:block}.stop-tools{display:flex;gap:2px;align-items:flex-start}.stop-tools button{background:none;border:0;color:#66766b;font-size:15px;border-radius:5px;padding:1px 5px}.stop-tools button:hover{background:#edf5e8}.leg-label{font-size:10px;color:#69876f;margin:2px 0 0 41px}.route-actions{display:grid;gap:8px;margin-top:15px}.time-summary{background:#153f30;color:#f4f9ef;border-radius:12px;padding:16px;margin-top:16px}.time-summary h4{color:#deef9c;letter-spacing:1px;font-size:10px;margin:0 0 10px}.summary-times{display:grid;grid-template-columns:1fr 1fr;gap:11px}.summary-times span{display:block;color:#b3c9b8;font-size:10px}.summary-times b{display:block;font:800 25px/1.15 Outfit,sans-serif}.time-summary p{font-size:10px;color:#bcd1c3;margin:13px 0 0}.map-wrap{position:relative;overflow:hidden;border-radius:16px;border:1px solid #d8e0d7;background:#e6ebdf;min-height:550px}.map-wrap #map{height:100%;min-height:550px;z-index:0}.map-search-overlay{position:absolute;top:15px;left:50px;right:15px;z-index:500;display:flex;align-items:center;justify-content:space-between;gap:10px;pointer-events:none}.map-search-overlay span{background:white;padding:11px 14px;border-radius:8px;box-shadow:0 5px 15px #0002;color:#34553e;font-size:11px;font-weight:900;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.map-search-overlay button{pointer-events:auto;border:0;background:white;width:39px;height:39px;box-shadow:0 5px 15px #0002;border-radius:9px;font-size:22px;color:#1b6847}.map-footer{position:absolute;bottom:14px;left:16px;right:16px;display:flex;gap:15px;z-index:500;background:#fffefaed;padding:10px 12px;border-radius:8px;flex-wrap:wrap;font-size:10px;color:#4e624f;font-weight:800;pointer-events:none}.legend-dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:4px}.legend-dot.green{background:#226849}.legend-dot.orange{background:#f2a448}.map-hint{margin-left:auto;font-weight:500;color:#839180}.leaflet-popup-content-wrapper{border-radius:12px!important}.leaflet-popup-content{font-family:'DM Sans',sans-serif!important;font-size:12px}.marker-pin{width:22px;height:22px;border:3px solid white;border-radius:50%;background:#236c4a;box-shadow:0 2px 9px #1b452e8c}.marker-pin.selected{background:#f2ad4b;width:26px;height:26px}.pub-popup h4{font-size:15px;font-family:Outfit;margin:0 0 5px}.pub-popup p{margin:0 0 6px;font-size:11px;color:#667e6c}.popup-add{background:#1c5d41;color:white;border:0;border-radius:6px;padding:8px 12px;margin-top:6px;font-weight:800;font-size:11px}.sharing-panel{margin-top:28px;display:flex;align-items:center;justify-content:space-between;background:#e7f0dc;border-radius:15px;padding:25px;gap:22px}.sharing-panel h2{font-size:27px}.sharing-panel p{color:#6e816e;max-width:550px;font-size:12px;margin:10px 0 0}.share-buttons{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;max-width:425px}.footer{padding:25px 0 90px;font-size:9px;color:#84948a;letter-spacing:.4px}.footer a{color:#426650}.compact-heading{padding:50px 0 20px;text-align:center}.compact-heading h1{font-weight:900;font-size:clamp(48px,5vw,76px);letter-spacing:-.07em;margin:7px 0}.compact-heading em{color:#8da84d}.compact-heading p{color:#829084;max-width:480px;margin:0 auto}.roulette-wrap{border:1px solid #e3eadd;border-radius:20px;background:#fffefa;max-width:690px;margin:22px auto 30px;padding:35px 20px;text-align:center;box-shadow:var(--shadow)}.roulette-wheel{margin:0 auto 16px;width:240px;height:240px;padding:13px;border-radius:100%;background:repeating-conic-gradient(#e8edce 0 35deg,#1d573d 35deg 70deg,#f4b44f 70deg 90deg);box-shadow:0 15px 23px #23503922}.roulette-wheel.spinning{animation:spin .45s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}.roulette-ring{border:12px solid #f9fbf6;background:#204b36;width:100%;height:100%;border-radius:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;color:#e8f6a6}.roulette-symbol{font-size:87px;line-height:.9}.roulette-caption{font-size:10px;font-weight:900;letter-spacing:1.5px;max-width:120px;margin-top:14px}.roulette-button{font-size:15px;padding:14px 28px}.roulette-status{font-size:12px;color:#809082;margin:17px 0}.roulette-result{max-width:430px;text-align:left;background:#f3f7ed;border:1px solid #e1eddb;padding:17px;border-radius:11px;margin:18px auto}.roulette-result h3{margin:4px 0}.roulette-result p{font-size:12px;color:#69816c;margin:5px 0 14px}.roulette-result .result-actions{display:flex;flex-wrap:wrap;gap:7px}.roulette-filter{display:flex;gap:15px;justify-content:center;flex-wrap:wrap;font-size:11px;color:#687a69;margin-top:25px}.roulette-filter label{display:flex;align-items:center;gap:6px}.saved-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:13px;margin:20px 0}.saved-card{border:1px solid var(--line);background:#fffefa;border-radius:14px;padding:22px}.saved-card h3{font-size:23px;margin:5px 0}.saved-card p{font-size:12px;color:#849184}.saved-card .row-btns{display:flex;gap:8px;margin-top:17px;flex-wrap:wrap}.saved-empty{background:#fffefa;padding:45px 20px;text-align:center;border-radius:13px;border:1px dashed var(--line);grid-column:1/-1;color:#869487}.calendar-connect{display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;margin:28px 0;border-radius:16px;background:#e8f0e1;padding:24px}.calendar-connect h3{margin:5px 0 7px}.calendar-connect p{color:#778776;max-width:550px;margin:0 0 11px;font-size:12px}.calendar-connect small{color:#67825e}.calendar-controls{display:flex;flex-wrap:wrap;gap:8px}.clashes{flex-basis:100%;font-size:12px;color:#5b715d}.clash-item{margin:7px 0;padding:8px 11px;background:#fffefa;border-radius:8px}.toast{position:fixed;z-index:2000;bottom:30px;left:50%;transform:translate(-50%,120px);background:#183d2d;color:#fff;border-radius:10px;padding:12px 19px;font-size:12px;box-shadow:0 8px 25px #112f2460;transition:transform .25s;max-width:min(420px,90vw);text-align:center;pointer-events:none}.toast.show{transform:translate(-50%,0)}.mobile-nav{display:none}
+@media(max-width:1250px){.main{padding:0 24px}.sidebar{width:210px}.main{margin-left:210px}.form-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.route-layout{grid-template-columns:300px minmax(0,1fr)}.hero-art{margin-right:1%}.weather-grid{grid-template-columns:1.1fr repeat(3,1fr)}}
+@media(max-width:800px){.sidebar{display:none}.main{margin-left:0;padding:0 16px}.topbar{height:66px}.topbar-tag{letter-spacing:1px;font-size:9px}.page{padding-top:17px}.hero{height:255px;padding:27px}.hero h1{font-size:45px}.hero p{max-width:340px;font-size:12px}.hero-art{width:120px;margin:0}.pint-illustration{transform:scale(.68) rotate(-12deg);transform-origin:top left;left:3px;top:75px}.hero-sticker{left:58px;top:28px}.section-heading{margin:25px 0 13px}.section-heading h2,.forecast-title h2{font-size:27px}.route-layout{grid-template-columns:1fr}.route-sidebar{min-height:0;max-height:none;order:2}.map-wrap{order:1;min-height:360px}.map-wrap #map{min-height:360px;height:420px}.weather-grid{grid-template-columns:repeat(3,1fr)}.weather-main{grid-column:1/-1}.sharing-panel{align-items:flex-start;flex-direction:column}.share-buttons{justify-content:flex-start}.footer{padding-bottom:96px}.mobile-nav{display:flex;position:fixed;z-index:1000;bottom:0;left:0;right:0;justify-content:space-around;background:#153b2d;border-top:1px solid #446951;padding:9px 0 calc(9px + env(safe-area-inset-bottom))}.mobile-nav-btn{background:none;border:0;display:flex;flex-direction:column;align-items:center;gap:1px;font-size:22px;color:#bed1c0;min-width:80px}.mobile-nav-btn.active{color:#dff29f}.mobile-nav-btn span{font-size:10px;font-weight:800}.toast{bottom:88px}}
+@media(max-width:490px){.main{padding:0 13px}.topbar-right{gap:8px;font-size:10px}.hero{height:245px;padding:24px 20px}.hero h1{font-size:41px;max-width:240px}.hero-copy{max-width:255px}.hero p{font-size:11px;max-width:240px}.hero-kicker{font-size:8px;letter-spacing:1px}.hero-art{width:42px}.pint-illustration{top:97px;left:-30px;transform:scale(.52) rotate(-12deg)}.hero-sticker{left:-12px;top:12px;font-size:8px}.hero-action{padding:10px 12px;font-size:11px}.section-heading h2,.forecast-title h2{font-size:25px}.small-note{font-size:9px;max-width:100px;text-align:right}.details-card{padding:14px}.form-grid{gap:13px 9px}.field span{font-size:11px}.field input,.field select{padding:10px 9px;font-size:12px}.input-with-button input{padding-right:45px}.input-action{font-size:9px;padding:8px 5px}.details-footer{flex-direction:column;align-items:stretch}.details-footer button{width:100%}.forecast-title h2{max-width:250px}.weather-grid{grid-template-columns:repeat(3,1fr)}.weather-cell{padding:13px 11px}.weather-cell b{font-size:19px}.weather-cell span{font-size:10px}.weather-main{padding:16px}.weather-symbol{font-size:37px}.route-section{margin-top:23px}.map-wrap #map{height:360px;min-height:360px}.map-footer{gap:9px}.map-hint{display:none}.sharing-panel{padding:20px}.share-buttons .btn{flex:1}.compact-heading{padding:30px 0 12px}.roulette-wheel{height:210px;width:210px}.roulette-symbol{font-size:65px}}
+
+  </style>
+  <title>Pint Planner | Make a day of it</title>
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar">
+    <a class="brand" href="#planner" aria-label="Pint Planner home"><span class="brand-mark">P<span class="brand-dot">.</span></span><span class="brand-words">PINT<br>PLANNER</span></a>
+    <div class="sidebar-top-label">YOUR LOCAL PUB PLANNING CLUB</div>
+    <nav class="main-nav" aria-label="Main navigation">
+      <button class="nav-btn active" data-tab="planner"><span class="nav-emoji">⌁</span> Crawl planner</button>
+      <button class="nav-btn" data-tab="roulette"><span class="nav-emoji">✳</span> Pub roulette</button>
+      <button class="nav-btn" data-tab="saved"><span class="nav-emoji">▤</span> Saved plans</button>
+    </nav>
+    <div class="sidebar-bottom"><span class="online-pip"></span> GREAT DAYS START HERE <small>Made for good company & decent pubs.</small></div>
+  </aside>
+  <main class="main">
+    <header class="topbar"><span class="eyebrow topbar-tag">GOOD PLANS. BETTER PINTS.</span><div class="topbar-right"><span id="today-text"></span><span class="circle-icon">🍻</span></div></header>
+    <section class="page active" id="page-planner" aria-labelledby="planner-heading">
+      <div class="hero">
+        <div class="hero-copy"><div class="hero-kicker">THE WEEKEND LOOKS GOOD FROM HERE <span>↗</span></div><h1 id="planner-heading">Make a day <em>of it.</em></h1><p>Good pubs. Good mates. No faffing about. Build a crawl worth getting the group chat excited about.</p><a href="#route-builder" class="hero-action">Let's plan the pints <span>↗</span></a></div>
+        <div class="hero-art" aria-hidden="true"><div class="pint-glow"></div><div class="pint-illustration"><div class="foam"><b></b><b></b><b></b></div><div class="beer-liquid"><i></i><i></i><i></i></div><div class="beer-handle"></div></div><span class="hero-sticker">CHEERS<br>TO THAT! ✷</span></div>
+      </div>
+      <div class="section-heading"><div><span class="eyebrow">01 / THE DETAILS</span><h2>First, the essentials.</h2></div><span class="small-note">Everything's adjustable later</span></div>
+      <div class="details-card">
+        <div class="form-grid">
+          <label class="field"><span>Where are we drinking?</span><div class="input-with-button"><input id="place-input" type="text" value="Newcastle upon Tyne" placeholder="Town or city" autocomplete="address-level2"><button type="button" class="input-action" id="find-place" aria-label="Find this place">Find ↗</button></div></label>
+          <label class="field"><span>When's the big day?</span><input id="crawl-date" type="date"></label>
+          <label class="field"><span>First pint at</span><input id="start-time" type="time" value="13:00"></label>
+          <label class="field"><span>People in the group</span><input id="group-size" type="number" min="1" max="50" value="4"></label>
+          <label class="field"><span>Minutes per pint <small>(per person)</small></span><input id="pint-mins" type="number" min="5" max="180" step="5" value="35"></label>
+          <label class="field"><span>Pints per pub <small>(per person)</small></span><input id="pints-stop" type="number" min="1" max="8" value="1"></label>
+          <label class="field"><span>Extra minutes per stop</span><input id="stop-buffer" type="number" min="0" max="90" step="5" value="10"></label>
+          <label class="field"><span>Pub search radius</span><select id="pub-radius"><option value="1000">1 km</option><option value="2500" selected>2.5 km</option><option value="5000">5 km</option></select></label>
+        </div>
+        <div class="details-footer"><span><span class="green-check">✓</span> Timings will update as you add pubs</span><button class="btn btn-dark" id="nearby-search">Find nearby pubs <span>→</span></button></div>
+      </div>
+      <div class="forecast-container" id="forecast-block"><div class="forecast-title"><div><span class="eyebrow">02 / PINT FORECAST</span><h2>Beer garden or bar stool?</h2></div><span class="weather-provider">Forecast: <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a></span></div><div id="weather-panel" class="weather-panel"><div class="weather-loading">Checking the weather for your plans…</div></div></div>
+      <div id="route-builder" class="route-section"><div class="section-heading"><div><span class="eyebrow">03 / THE MAIN EVENT</span><h2>Build your route.</h2></div><span class="small-note">Tap pubs on the map to add them</span></div>
+      <div class="route-layout">
+        <div class="route-sidebar">
+          <div class="route-subhead"><div><span class="eyebrow">YOUR LINE-UP</span><h3>The stops</h3></div><span class="count-pill" id="stop-count">0 pubs</span></div>
+          <div id="stops-list" class="stops-list"><div class="empty-stops"><span class="empty-illustration">♧</span><b>No pubs on the list. Yet.</b><p>Find nearby pubs and tap a marker to add it to your crawl.</p></div></div>
+          <div class="route-actions"><button class="btn btn-dark full" id="calculate-route">Calculate walking route <span>→</span></button><button class="btn btn-outline full" id="save-plan">Save this crawl</button></div>
+          <div class="time-summary" id="time-summary" aria-live="polite"></div>
+        </div>
+        <div class="map-wrap"><div id="map" role="application" aria-label="Map showing nearby pubs and your planned crawl"></div><div class="map-search-overlay"><span id="map-location-label">Newcastle upon Tyne</span><button type="button" id="use-my-location" title="Use my current location" aria-label="Use my current location">⌖</button></div><div class="map-footer"><span><i class="legend-dot green"></i> Pubs nearby</span><span><i class="legend-dot orange"></i> Your stops</span><span class="map-hint">Tip: tap map to add a custom stop</span></div></div>
+      </div>
+      <div class="sharing-panel"><div><span class="eyebrow">04 / GET EVERYONE INVOLVED</span><h2>Send it to the group chat.</h2><p>Share your route, pop the day in your calendar or send a Google Calendar event link. Recipients can open the crawl without an account.</p></div><div class="share-buttons"><button class="btn btn-dark" id="share-plan">Share crawl ↗</button><button class="btn btn-outline" id="download-ics">Add to calendar ↓</button><button class="btn btn-outline" id="google-add">Google Calendar ↗</button></div></div>
+    </section>
+    <section class="page" id="page-roulette" aria-labelledby="roulette-heading"><div class="compact-heading"><span class="eyebrow">LET FATE PICK YOUR NEXT ROUND</span><h1 id="roulette-heading">Pub <em>roulette.</em></h1><p>Inspired by the classic pub-picking game. One tap, one random pub. Absolutely no arguing about where to go next.</p></div><div class="roulette-wrap"><div class="roulette-wheel" id="roulette-wheel"><div class="roulette-ring"><span class="roulette-symbol">✳</span><span class="roulette-caption">THE NEXT ROUND IS ON FATE</span></div></div><button id="roulette-spin" class="btn btn-dark roulette-button">Spin for a pub ↗</button><div class="roulette-status" id="roulette-status">Search for pubs on the Planner page first, or spin to load them here.</div><div id="roulette-result" class="roulette-result" hidden></div><div class="roulette-filter"><label><input type="checkbox" id="roulette-bars" checked> Include bars and beer gardens</label><label><input type="checkbox" id="roulette-exclude" checked> Avoid pubs already on my crawl</label></div></div></section>
+    <section class="page" id="page-saved" aria-labelledby="saved-heading"><div class="compact-heading"><span class="eyebrow">ALL THE GOOD IDEAS IN ONE PLACE</span><h1 id="saved-heading">Your <em>plans.</em></h1><p>Crawls you've saved on this device. Nothing is uploaded to a server.</p></div><div id="saved-list" class="saved-list"></div><div class="calendar-connect"><div><span class="eyebrow">OPTIONAL INTEGRATION</span><h3>Connect your Google Calendar</h3><p>Check your own schedule for clashes before committing to a date. This needs a free Google Cloud OAuth Client ID set up by the app owner.</p><small id="calendar-status">Not connected</small></div><div class="calendar-controls"><button class="btn btn-outline" id="calendar-connect">Connect calendar</button><button class="btn btn-light" id="calendar-disconnect" hidden>Disconnect</button></div><div id="calendar-clashes" class="clashes"></div></div></section>
+    <footer class="footer">MADE FOR MATES, NOT MEETINGS. <span>🍺</span> <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">Map data © OpenStreetMap contributors</a> · <a href="https://open-meteo.com/" target="_blank" rel="noopener">Weather by Open-Meteo</a> · <a href="https://routing.openstreetmap.de/about.html" target="_blank" rel="noopener">Walking routes by OSRM</a>. Always confirm pub hours and accessibility.</footer>
+  </main>
+</div>
+<nav class="mobile-nav" aria-label="Mobile navigation"><button class="mobile-nav-btn active" data-tab="planner">⌁ <span>Planner</span></button><button class="mobile-nav-btn" data-tab="roulette">✳ <span>Roulette</span></button><button class="mobile-nav-btn" data-tab="saved">▤ <span>Plans</span></button></nav>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<script>
+// Optional: create a Web OAuth client in Google Cloud and paste its PUBLIC client ID here.
+// Never put a client secret, access token, or API key intended to be secret in a GitHub Pages repository.
+window.PINT_PLANNER_CONFIG = {
+  googleClientId: ''
+};
+
+</script>
+<script>
+/* Pint Planner · original mobile-first static app, no server-side secrets. */
+'use strict';
+const $ = (id) => document.getElementById(id);
+const LS_KEY = 'pint-planner-saves-v1';
+const PUB_CACHE_PREFIX = 'pint-planner-pubs-';
+const DEFAULT_CENTRE = { lat: 54.973, lon: -1.614, name: 'Newcastle upon Tyne' };
+const state = {
+  centre: {...DEFAULT_CENTRE},
+  pubs: [],
+  stops: [],
+  route: null,
+  weather: null,
+  map: null,
+  markers: null,
+  line: null,
+  token: null,
+  geolocation: false,
+  loadingPubs: false,
+  spinning: false
+};
+let toastTimer, weatherTimer;
+const clean = (x) => String(x ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const num = (id, lo, hi, fallback) => { const x = Number($(id).value); return Number.isFinite(x) ? Math.min(hi,Math.max(lo,x)) : fallback; };
+const isoDate = d => [d.getFullYear(), String(d.getMonth()+1).padStart(2,'0'), String(d.getDate()).padStart(2,'0')].join('-');
+const labelDate = date => { const d = new Date(date+'T12:00:00'); return Number.isNaN(d.getTime())?'Choose a date':d.toLocaleDateString('en-GB',{weekday:'short',day:'numeric',month:'short',year:'numeric'}); };
+const toClock = (date) => date.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'});
+const sleep = ms => new Promise(resolve=>setTimeout(resolve,ms));
+function toast(message){ const el=$('toast');el.textContent=message;el.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove('show'),3800); }
+function safeNumber(x,min,max){ const n=Number(x);return Number.isFinite(n)&&n>=min&&n<=max?n:null; }
+function getSettings(){
+  return {date:$('crawl-date').value,time:$('start-time').value||'13:00',group:num('group-size',1,50,4),pace:num('pint-mins',5,180,35),pints:num('pints-stop',1,8,1),buffer:num('stop-buffer',0,90,10),radius:num('pub-radius',500,5000,2500)};
+}
+function setSettings(s){
+  if(s.date&&/^\d{4}-\d{2}-\d{2}$/.test(s.date)) $('crawl-date').value=s.date;
+  if(s.time&&/^\d{2}:\d{2}$/.test(s.time)) $('start-time').value=s.time;
+  for(const [key,id,min,max] of [['group','group-size',1,50],['pace','pint-mins',5,180],['pints','pints-stop',1,8],['buffer','stop-buffer',0,90],['radius','pub-radius',500,5000]]){
+    const value=safeNumber(s[key],min,max);if(value!==null) $(id).value=value;
+  }
+}
+function distanceMeters(a,b){const r=6371000,dlat=(b.lat-a.lat)*Math.PI/180,dlon=(b.lon-a.lon)*Math.PI/180,x=Math.sin(dlat/2)**2+Math.cos(a.lat*Math.PI/180)*Math.cos(b.lat*Math.PI/180)*Math.sin(dlon/2)**2;return r*2*Math.atan2(Math.sqrt(x),Math.sqrt(1-x));}
+function approximateLegs(){const out=[];for(let i=1;i<state.stops.length;i++){const d=distanceMeters(state.stops[i-1],state.stops[i])*1.3;out.push({distance:d,duration:d/1.32});}return out;}
+function currentLegs(){return state.route?.legs || approximateLegs();}
+function durationInfo(){
+  const cfg=getSettings();const legs=currentLegs();const walkingSec=legs.reduce((sum,l)=>sum+l.duration,0);
+  const pubMinutes=state.stops.length*(cfg.pace*cfg.pints+cfg.buffer);
+  const total=Math.ceil(pubMinutes+walkingSec/60);const start=new Date(cfg.date+'T'+cfg.time+':00');
+  const end=new Date(start.getTime()+total*60000);
+  const distance=legs.reduce((sum,l)=>sum+l.distance,0);
+  return {legs,walkingSec,pubMinutes,total,start,end,distance,valid:!Number.isNaN(start.getTime())};
+}
+function clearRoute(){state.route=null;if(state.line&&state.map){state.map.removeLayer(state.line);state.line=null;}updateUI();}
+function getPubFromOsm(el){const tags=el.tags||{};const lat=el.lat??el.center?.lat,lon=el.lon??el.center?.lon;
+  if(typeof lat!=='number'||typeof lon!=='number'||!tags.name) return null;
+  const addr=[tags['addr:housenumber'],tags['addr:street'],tags['addr:city']].filter(Boolean).join(' ');
+  return {id:el.type+'-'+el.id,name:tags.name.trim().slice(0,120),lat,lon,type:tags.amenity,addr,hours:tags.opening_hours||'',website:tags.website||''};
+}
+function renderMap(){
+  if(!state.map||!window.L)return;
+  state.markers.clearLayers();const selected=new Set(state.stops.map(s=>s.id));
+  for(const pub of state.pubs){
+    const isSelected=selected.has(pub.id);
+    const marker=L.marker([pub.lat,pub.lon],{icon:L.divIcon({className:'',html:'<div class="marker-pin'+(isSelected?' selected':'')+'"></div>',iconSize:[26,26],iconAnchor:[13,13]})});
+    const id=JSON.stringify(pub.id);
+    marker.bindPopup(`<div class="pub-popup"><h4>${clean(pub.name)}</h4><p>${clean(pub.type==='biergarten'?'Beer garden':pub.type==='bar'?'Bar':'Pub')} ${pub.addr?'· '+clean(pub.addr):''}</p><p>${pub.hours?'Hours listed: '+clean(pub.hours):'Opening hours not listed — check before visiting'}</p><button class="popup-add" onclick="window.PintPlanner.add(${clean(id)})">${isSelected?'Already added ✓':'Add to crawl +'}</button></div>`);
+    state.markers.addLayer(marker);
+  }
+  for(const pub of state.stops.filter(s=>s.custom || !state.pubs.some(p=>p.id===s.id))){
+    const marker=L.marker([pub.lat,pub.lon],{icon:L.divIcon({className:'',html:'<div class="marker-pin selected"></div>',iconSize:[26,26],iconAnchor:[13,13]})});
+    marker.bindPopup(`<div class="pub-popup"><h4>${clean(pub.name)}</h4><p>Custom stop</p></div>`);state.markers.addLayer(marker);
+  }
+}
+function initialiseMap(){
+  if(!window.L){$('map').textContent='Map library could not load. Check your internet connection.';return;}
+  state.map=L.map('map',{zoomControl:true,scrollWheelZoom:false}).setView([state.centre.lat,state.centre.lon],14);
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'© OpenStreetMap contributors'}).addTo(state.map);
+  state.markers=L.layerGroup().addTo(state.map);
+  state.map.on('click',e=>{
+    const name=window.prompt('Name this custom stop (pub, meeting point or landmark):');
+    if(name&&name.trim()){
+      const stop={id:'custom-'+Date.now(),name:name.trim().slice(0,100),lat:e.latlng.lat,lon:e.latlng.lng,type:'custom',custom:true};
+      state.stops.push(stop);clearRoute();toast('Custom stop added to your crawl.');
+    }
+  });
+  setTimeout(()=>state.map.invalidateSize(),120);
+}
+function setCentre(place){
+  state.centre={lat:place.lat,lon:place.lon,name:place.name};$('place-input').value=place.name;$('map-location-label').textContent=place.name;
+  if(state.map){state.map.setView([place.lat,place.lon],14);state.map.invalidateSize();}
+  state.pubs=[];renderMap();refreshWeather();
+}
+async function findPlace(){
+  const q=$('place-input').value.trim();if(q.length<2){toast('Enter a town or city to search.');return;}
+  $('find-place').disabled=true;$('find-place').textContent='…';
+  try{
+    const url='https://geocoding-api.open-meteo.com/v1/search?name='+encodeURIComponent(q)+'&count=8&language=en&format=json&countryCode=GB';
+    const response=await fetch(url);if(!response.ok)throw new Error('Location search unavailable');const data=await response.json();
+    const matches=(data.results||[]);const preferred=matches.find(x=>x.country_code==='GB')||matches[0];
+    if(!preferred)throw new Error('No matching UK location found — try a nearby town or city.');
+    setCentre({lat:preferred.latitude,lon:preferred.longitude,name:preferred.name+(preferred.admin1?', '+preferred.admin1:'')});
+    await loadPubs();toast('Showing pubs around '+preferred.name+'.');
+  }catch(e){toast(e.message||'Could not find that place.');}
+  finally{$('find-place').disabled=false;$('find-place').textContent='Find ↗';}
+}
+function useLocation(){
+  if(!navigator.geolocation){toast('Location is not available on this device.');return;}
+  toast('Requesting location permission…');
+  navigator.geolocation.getCurrentPosition(async position=>{
+    setCentre({lat:position.coords.latitude,lon:position.coords.longitude,name:'Near me'});
+    state.geolocation=true;await loadPubs();toast('Showing pubs close to your location.');
+  },()=>toast('Location was not shared. You can search by town instead.'),{timeout:12000,enableHighAccuracy:false,maximumAge:300000});
+}
+async function loadPubs(){
+  if(state.loadingPubs)return;
+  const {lat,lon}=state.centre,radius=getSettings().radius;
+  const key=PUB_CACHE_PREFIX+[lat.toFixed(2),lon.toFixed(2),radius].join('-');
+  try{const entry=JSON.parse(sessionStorage.getItem(key)||'null');if(entry&&Date.now()-entry.t<30*60*1000){state.pubs=entry.pubs;renderMap();toast(`Found ${state.pubs.length} nearby places (cached).`);return;}}catch{}
+  state.loadingPubs=true;const btn=$('nearby-search');btn.disabled=true;btn.textContent='Searching for pubs…';$('roulette-status').textContent='Loading pub locations from OpenStreetMap…';
+  const query=`[out:json][timeout:25];(node(around:${radius},${lat},${lon})["amenity"~"^(pub|bar|biergarten)$"];way(around:${radius},${lat},${lon})["amenity"~"^(pub|bar|biergarten)$"];);out center tags;`;
+  try{
+    const response=await fetch('https://overpass-api.de/api/interpreter',{method:'POST',body:new URLSearchParams({data:query})});
+    if(!response.ok)throw new Error(response.status===429?'Pub search is busy; please try again shortly.':'Pub search temporarily unavailable.');
+    const data=await response.json();const pubList=(data.elements||[]).map(getPubFromOsm).filter(Boolean);
+    const distinct=new Map();pubList.forEach(p=>{const key=p.name.toLowerCase()+'-'+p.lat.toFixed(3)+'-'+p.lon.toFixed(3);if(!distinct.has(key))distinct.set(key,p);});
+    state.pubs=[...distinct.values()].sort((a,b)=>distanceMeters(a,state.centre)-distanceMeters(b,state.centre));
+    try{sessionStorage.setItem(key,JSON.stringify({t:Date.now(),pubs:state.pubs}));}catch{}
+    renderMap();$('roulette-status').textContent=`${state.pubs.length} pubs and bars in your search area. Ready to spin!`;
+    toast(state.pubs.length?`${state.pubs.length} pubs and bars found. Tap a green pin to add one.`:'No mapped pubs found. Widen the radius or add custom stops.');
+  }catch(e){$('roulette-status').textContent='Pub search unavailable at the moment. Try again from the planner.';toast(e.message||'Could not load pubs.');}
+  finally{btn.disabled=false;btn.innerHTML='Find nearby pubs <span>→</span>';state.loadingPubs=false;}
+}
+function addStop(id){const pub=state.pubs.find(p=>p.id===id);if(!pub){toast('That pub is not in the current search.');return;}if(state.stops.some(s=>s.id===id)){toast('That pub is already on the route.');return;}state.stops.push({...pub});clearRoute();toast(pub.name+' added!');}
+function moveStop(index,dir){const target=index+dir;if(target<0||target>=state.stops.length)return;[state.stops[index],state.stops[target]]=[state.stops[target],state.stops[index]];clearRoute();}
+function removeStop(index){state.stops.splice(index,1);clearRoute();}
+function renderStops(){
+  $('stop-count').textContent=state.stops.length+' '+(state.stops.length===1?'pub':'pubs');const root=$('stops-list');
+  if(!state.stops.length){root.innerHTML='<div class="empty-stops"><span class="empty-illustration">♧</span><b>No pubs on the list. Yet.</b><p>Find nearby pubs and tap a marker to add it to your crawl.</p></div>';return;}
+  const legs=currentLegs();let html='';
+  state.stops.forEach((stop,i)=>{
+    if(i>0)html+=`<div class="leg-label">↳ ${Math.max(1,Math.ceil((legs[i-1]?.duration||0)/60))} min walk ${state.route?'':'(approx.)'}</div>`;
+    html+=`<div class="stop-card"><span class="stop-index">${i+1}</span><div class="stop-info"><strong>${clean(stop.name)}</strong><small>${clean(stop.addr|| (stop.custom?'Custom pin':'Stop '+(i+1)))}</small></div><div class="stop-tools"><button aria-label="Move ${clean(stop.name)} up" onclick="window.PintPlanner.move(${i},-1)" ${i===0?'disabled':''}>↑</button><button aria-label="Move ${clean(stop.name)} down" onclick="window.PintPlanner.move(${i},1)" ${i===state.stops.length-1?'disabled':''}>↓</button><button aria-label="Remove ${clean(stop.name)}" onclick="window.PintPlanner.remove(${i})">×</button></div></div>`;
+  });root.innerHTML=html;
+}
+function updateSummary(){
+  const d=durationInfo(),root=$('time-summary');
+  if(!state.stops.length){root.innerHTML='<h4>YOUR DAY AT A GLANCE</h4><p>Add a pub or two to see walking times, estimated drinks and your finish time.</p>';return;}
+  const cfg=getSettings();const totalPints=state.stops.length*cfg.pints*cfg.group;
+  root.innerHTML=`<h4>YOUR DAY AT A GLANCE</h4><div class="summary-times"><div><span>Estimated finish</span><b>${d.valid?toClock(d.end):'—'}</b></div><div><span>Day out duration</span><b>${Math.floor(d.total/60)}h ${String(d.total%60).padStart(2,'0')}m</b></div><div><span>Walking</span><b>${Math.round(d.walkingSec/60)} min</b></div><div><span>Distance</span><b>${(d.distance/1000).toFixed(1)} km</b></div><div><span>Group pints (planned)</span><b>${totalPints}</b></div><div><span>Time in pubs</span><b>${d.pubMinutes} min</b></div></div><p>${state.route?'✓ Walking route calculated on mapped footpaths.':'ⓘ Walking is a rough estimate. Press Calculate walking route for mapped paths.'} Includes ${cfg.buffer} extra minutes per pub for ordering, loos etc. Travel to the first pub is not included.</p>`;
+}
+function updateUI(){renderStops();renderMap();updateSummary();if(state.weather)renderWeather(state.weather);}
+async function calculateRoute(){
+  if(state.stops.length<2){toast('Add at least two pubs to calculate a walking route.');return;}
+  const button=$('calculate-route');button.disabled=true;button.textContent='Finding walking paths…';
+  try{
+    const coords=state.stops.map(p=>`${p.lon.toFixed(6)},${p.lat.toFixed(6)}`).join(';');
+    const url=`https://routing.openstreetmap.de/routed-foot/route/v1/driving/${coords}?overview=full&geometries=geojson&steps=false`;
+    const response=await fetch(url);if(!response.ok)throw new Error('Walking route service is unavailable.');const data=await response.json();
+    const route=data.routes?.[0];if(!route||!route.legs||route.legs.length!==state.stops.length-1)throw new Error('No continuous walking route could be found.');
+    state.route={legs:route.legs.map(l=>({distance:l.distance,duration:l.duration})),geometry:route.geometry};
+    if(state.line&&state.map)state.map.removeLayer(state.line);
+    if(state.map&&window.L){state.line=L.geoJSON(route.geometry,{style:{color:'#eb9b3d',weight:5,opacity:.95}}).addTo(state.map);state.map.fitBounds(state.line.getBounds().pad(.15));}
+    updateUI();toast('Walking route calculated! Times now use mapped footpaths.');
+  }catch(e){state.route=null;updateUI();toast((e.message||'Routing unavailable')+' Showing rough walking estimates instead.');}
+  finally{button.disabled=false;button.innerHTML='Calculate walking route <span>→</span>';}
+}
+async function refreshWeather(){
+  const day=$('crawl-date').value;if(!/^\d{4}-\d{2}-\d{2}$/.test(day))return;
+  const delta=(new Date(day+'T12:00:00')-new Date(isoDate(new Date())+'T12:00:00'))/86400000;
+  if(delta<0){state.weather=null;$('weather-panel').innerHTML='<div class="weather-loading">Choose today or a future date to view the forecast.</div>';return;}
+  if(delta>15){state.weather=null;$('weather-panel').innerHTML='<div class="weather-loading">That date is too far ahead for a dependable forecast. Check back when it’s within the next 16 days.</div>';return;}
+  const {lat,lon}=state.centre;
+  $('weather-panel').innerHTML='<div class="weather-loading">Checking the latest forecast…</div>';
+  const requestId=day+':'+lat+':'+lon;refreshWeather.lastRequest=requestId;
+  try{
+    const url=`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&hourly=temperature_2m,precipitation_probability,cloud_cover,wind_speed_10m,weather_code&timezone=Europe%2FLondon&forecast_days=16`;
+    const res=await fetch(url);if(!res.ok)throw new Error('Forecast service temporarily unavailable.');const json=await res.json();
+    if(refreshWeather.lastRequest!==requestId)return;
+    state.weather=json;renderWeather(json);
+  }catch(e){if(refreshWeather.lastRequest===requestId){state.weather=null;$('weather-panel').innerHTML='<div class="weather-loading">Could not load the weather. Check your connection and try changing the date.</div>';}}
+}
+function mean(values){return values.length?values.reduce((s,x)=>s+x,0)/values.length:0;}
+function renderWeather(data){
+  const date=$('crawl-date').value,info=durationInfo(),startHour=parseInt(($('start-time').value||'13:00').split(':')[0],10),durationHours=Math.max(2,Math.min(10,Math.ceil(info.total/60)||4));
+  const hours=data.hourly?.time||[];const indices=[];for(let i=0;i<hours.length;i++){if(hours[i].startsWith(date+'T')){const h=Number(hours[i].slice(11,13));if(h>=startHour&&h<=Math.min(23,startHour+durationHours))indices.push(i);}}
+  if(!indices.length){$('weather-panel').innerHTML='<div class="weather-loading">Hourly weather isn’t available for this date yet.</div>';return;}
+  const field=(key)=>indices.map(i=>Number(data.hourly[key]?.[i])).filter(Number.isFinite);
+  const temp=Math.round(mean(field('temperature_2m'))),rain=Math.round(mean(field('precipitation_probability'))),cloud=Math.round(mean(field('cloud_cover'))),wind=Math.round(mean(field('wind_speed_10m')));
+  const comfortable=temp>=14&&temp<=25&&wind<25;const dry=rain<35;const sunny=cloud<45&&rain<30;
+  const label=sunny&&comfortable?'Sunshine & pints':dry&&comfortable?'Beer garden weather':dry?'Jacket-on pints':'Indoor pint weather';
+  const symbol=sunny?'☀️':dry?'⛅':'🌧️';const rec=sunny&&comfortable?'Outdoor seating looks promising.':dry&&comfortable?'Outdoors could be worth a shout.':dry?'Check the temperature before choosing outdoor tables.':'Pick pubs with comfortable indoor seating.';
+  $('weather-panel').innerHTML=`<div class="weather-grid"><div class="weather-main"><div class="weather-symbol">${symbol}</div><div><b>${clean(label)}</b><small>${clean(labelDate(date))} · ${clean(rec)}</small></div></div><div class="weather-cell"><span>Temperature</span><b>${temp}°C</b><small>Estimated average</small></div><div class="weather-cell"><span>Rain chance</span><b>${rain}%</b><small>Mean hourly chance</small></div><div class="weather-cell"><span>Wind / cloud</span><b>${wind} km/h</b><small>${cloud}% cloud cover</small></div></div><p class="weather-caption">Pint conditions are a fun guide based on hourly weather predictions, not a guarantee of pub seating, sunshine or opening hours. Weather updates when you change date or location, or reload the app.</p>`;
+}
+function debounceWeather(){clearTimeout(weatherTimer);weatherTimer=setTimeout(refreshWeather,400);}
+function planPayload(){const s=getSettings();return {version:1,place:state.centre,settings:s,stops:state.stops.map(({id,name,lat,lon,type,addr,custom})=>({id,name,lat,lon,type,addr,custom}))};}
+function applyPayload(payload){
+  if(!payload||payload.version!==1||!Array.isArray(payload.stops)||payload.stops.length>35)throw new Error('Invalid crawl data');
+  const stops=payload.stops.map(s=>({id:String(s.id||''),name:String(s.name||'Unnamed stop').slice(0,120),lat:safeNumber(s.lat,-90,90),lon:safeNumber(s.lon,-180,180),type:String(s.type||'pub'),addr:String(s.addr||''),custom:!!s.custom}));
+  if(stops.some(s=>s.lat===null||s.lon===null))throw new Error('Invalid pub location');
+  state.stops=stops;setSettings(payload.settings||{});
+  if(payload.place&&safeNumber(payload.place.lat,-90,90)!==null&&safeNumber(payload.place.lon,-180,180)!==null)setCentre({lat:payload.place.lat,lon:payload.place.lon,name:String(payload.place.name||'Your crawl').slice(0,70)});
+  clearRoute();renderMap();setTab('planner');toast('Crawl loaded. Walking route can be recalculated.');
+}
+function encodePlan(x){const bytes=new TextEncoder().encode(JSON.stringify(x));let binary='';bytes.forEach(n=>binary+=String.fromCharCode(n));return btoa(binary).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');}
+function decodePlan(s){const binary=atob(s.replace(/-/g,'+').replace(/_/g,'/'));return JSON.parse(new TextDecoder().decode(Uint8Array.from(binary,c=>c.charCodeAt(0))));}
+function sharingUrl(){const url=new URL(location.href);url.searchParams.set('plan',encodePlan(planPayload()));url.hash='planner';return url.toString();}
+async function sharePlan(){if(!state.stops.length){toast('Add at least one pub before sharing.');return;}
+  const url=sharingUrl();try{if(navigator.share){await navigator.share({title:'Pint Planner crawl',text:'The plan for '+labelDate(getSettings().date)+' 🍻',url});}else{await navigator.clipboard.writeText(url);toast('Crawl link copied — paste it in your group chat!');}}catch(e){if(e.name!=='AbortError') {window.prompt('Copy your crawl link:',url);}}
+}
+function escapeIcs(v){return String(v).replace(/\\/g,'\\\\').replace(/\r?\n/g,'\\n').replace(/,/g,'\\,').replace(/;/g,'\\;');}
+const icsTime=d=>d.toISOString().replace(/[-:]/g,'').replace(/\.\d{3}/,'');
+function calendarDetails(){if(!state.stops.length)throw new Error('Add at least one pub first.');const d=durationInfo();if(!d.valid)throw new Error('Choose a valid date and time.');const text=state.stops.map((s,i)=>`${i+1}. ${s.name}`).join('\n');return {d,title:'Pint Planner: Pub crawl 🍻',description:`Pub crawl with ${getSettings().group} people.\n\nStops:\n${text}\n\nEstimated walking: ${Math.round(d.walkingSec/60)} minutes.\nExpected finish: ${toClock(d.end)}.\n\nPlan: ${sharingUrl()}`};}
+function downloadCalendar(){
+  try{const {d,title,description}=calendarDetails();const ics=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Pint Planner//UK//EN','CALSCALE:GREGORIAN','METHOD:PUBLISH','BEGIN:VEVENT','UID:'+Date.now()+'@pintplanner.local','DTSTAMP:'+icsTime(new Date()),'DTSTART:'+icsTime(d.start),'DTEND:'+icsTime(d.end),'SUMMARY:'+escapeIcs(title),'DESCRIPTION:'+escapeIcs(description),'LOCATION:'+escapeIcs(state.stops[0].name),'END:VEVENT','END:VCALENDAR'].join('\r\n');
+    const blob=new Blob([ics],{type:'text/calendar;charset=utf-8'});const object=URL.createObjectURL(blob);const a=document.createElement('a');a.href=object;a.download='pint-planner-'+getSettings().date+'.ics';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(object),2000);toast('Calendar event downloaded. Open it to add to your calendar.');
+  }catch(e){toast(e.message);}
+}
+function addGoogleEvent(){try{const {d,title,description}=calendarDetails();const p=new URLSearchParams({action:'TEMPLATE',text:title,dates:icsTime(d.start)+'/'+icsTime(d.end),details:description,location:state.stops[0].name});window.open('https://calendar.google.com/calendar/render?'+p,'_blank','noopener,noreferrer');}catch(e){toast(e.message);}}
+function getSaved(){try{const items=JSON.parse(localStorage.getItem(LS_KEY)||'[]');return Array.isArray(items)?items:[];}catch{return [];}}
+function savePlan(){if(!state.stops.length){toast('Choose some pubs before saving your crawl.');return;}const payload=planPayload();const records=getSaved();const id='crawl-'+Date.now();records.unshift({id,created:Date.now(),payload});try{localStorage.setItem(LS_KEY,JSON.stringify(records.slice(0,25)));toast('Crawl saved on this device.');renderSaved();}catch{toast('Could not save to device storage.');}}
+function deleteSaved(id){const records=getSaved().filter(r=>r.id!==id);localStorage.setItem(LS_KEY,JSON.stringify(records));renderSaved();toast('Saved crawl removed.');}
+function loadSaved(id){const record=getSaved().find(x=>x.id===id);if(record)try{applyPayload(record.payload);}catch(e){toast(e.message);}}
+function renderSaved(){const root=$('saved-list');const records=getSaved();if(!records.length){root.innerHTML='<div class="saved-empty"><h3>No saved crawls yet.</h3><p>Build a route in the Planner and hit “Save this crawl”. It will show up here.</p></div>';return;}
+  root.innerHTML=records.map(r=>`<article class="saved-card"><span class="eyebrow">SAVED CRAWL</span><h3>${clean(labelDate(r.payload?.settings?.date||''))}</h3><p>${clean(r.payload?.place?.name||'Your town')} · ${r.payload?.stops?.length||0} stops</p><div class="row-btns"><button class="btn btn-dark" onclick="window.PintPlanner.loadSaved(${clean(JSON.stringify(r.id))})">Open plan ↗</button><button class="btn btn-outline" onclick="window.PintPlanner.deleteSaved(${clean(JSON.stringify(r.id))})">Delete</button></div></article>`).join('');
+}
+function setTab(tab){if(!['planner','roulette','saved'].includes(tab))return;document.querySelectorAll('.page').forEach(el=>el.classList.toggle('active',el.id==='page-'+tab));document.querySelectorAll('[data-tab]').forEach(el=>el.classList.toggle('active',el.dataset.tab===tab));history.replaceState(null,'',location.pathname+location.search+'#'+tab);if(tab==='planner'&&state.map)setTimeout(()=>state.map.invalidateSize(),90);if(tab==='saved')renderSaved();window.scrollTo({top:0,behavior:'instant'});}
+async function spinRoulette(){if(state.spinning)return;if(!state.pubs.length)await loadPubs();if(!state.pubs.length){toast('No pubs found. Search another town or radius on the Planner page.');return;}
+  let list=state.pubs.filter(p=>$('roulette-bars').checked||p.type==='pub');if($('roulette-exclude').checked)list=list.filter(p=>!state.stops.some(s=>s.id===p.id));
+  if(!list.length){toast('No pubs match these filters. Untick one of the options.');return;}
+  const choice=list[Math.floor(Math.random()*list.length)];state.spinning=true;
+  $('roulette-spin').disabled=true;$('roulette-wheel').classList.add('spinning');$('roulette-status').textContent='Shuffling your next round…';$('roulette-result').hidden=true;
+  await sleep(1150);$('roulette-wheel').classList.remove('spinning');state.spinning=false;$('roulette-spin').disabled=false;
+  $('roulette-status').textContent='The next round is calling…';
+  const directions='https://www.google.com/maps/dir/?api=1&destination='+encodeURIComponent(choice.lat+','+choice.lon)+'&travelmode=walking';
+  $('roulette-result').innerHTML=`<span class="eyebrow">YOUR NEXT STOP</span><h3>${clean(choice.name)}</h3><p>${clean(choice.addr||'Pub / bar')} · ${Math.round(distanceMeters(choice,state.centre))} m from search centre</p><p>${choice.hours?'Listed hours: '+clean(choice.hours):'Opening hours not verified — check before setting off.'}</p><div class="result-actions"><button class="btn btn-dark" onclick="window.PintPlanner.add(${clean(JSON.stringify(choice.id))})">Add to crawl +</button><a class="btn btn-outline" target="_blank" rel="noopener noreferrer" href="${directions}">Walking directions ↗</a></div>`;
+  $('roulette-result').hidden=false;
+}
+async function connectCalendar(){
+  const id=window.PINT_PLANNER_CONFIG?.googleClientId;
+  if(!id){toast('Calendar linking requires a Google OAuth Client ID. See README for setup.');return;}
+  if(!window.google?.accounts?.oauth2){toast('Google sign-in is not ready. Reload and try again.');return;}
+  const client=google.accounts.oauth2.initTokenClient({client_id:id,scope:'https://www.googleapis.com/auth/calendar.readonly',callback:async res=>{
+    if(res.error||!res.access_token){toast('Calendar connection was not completed.');return;}
+    state.token=res.access_token;$('calendar-status').textContent='Google Calendar connected for this session';$('calendar-connect').textContent='Refresh schedule';$('calendar-disconnect').hidden=false;await loadCalendarClashes();
+  }});
+  if(state.token) await loadCalendarClashes();else client.requestAccessToken({prompt:'consent'});
+}
+async function loadCalendarClashes(){if(!state.token)return;const s=getSettings();const d=new Date(s.date+'T00:00:00');if(Number.isNaN(d.getTime()))return;const end=new Date(d.getTime()+86400000);
+  const url=new URL('https://www.googleapis.com/calendar/v3/calendars/primary/events');url.searchParams.set('timeMin',d.toISOString());url.searchParams.set('timeMax',end.toISOString());url.searchParams.set('singleEvents','true');url.searchParams.set('orderBy','startTime');url.searchParams.set('maxResults','40');
+  try{const res=await fetch(url,{headers:{Authorization:'Bearer '+state.token}});if(!res.ok)throw new Error(res.status===401?'Session expired. Connect again.':'Google Calendar request failed.');const json=await res.json();
+    const info=durationInfo();const clashes=(json.items||[]).filter(x=>{const start=x.start?.dateTime?new Date(x.start.dateTime):new Date(x.start?.date+'T00:00:00');const end=x.end?.dateTime?new Date(x.end.dateTime):new Date(x.end?.date+'T00:00:00');return start<info.end&&end>info.start;});
+    $('calendar-clashes').innerHTML=clashes.length?`<b>Potential clashes with your crawl:</b>${clashes.map(x=>`<div class="clash-item">${clean(x.summary||'Busy event')} · ${clean(x.start?.dateTime?toClock(new Date(x.start.dateTime)):'All-day event')}</div>`).join('')}`:'✓ No clashes found in your primary calendar for the planned time.';
+  }catch(e){$('calendar-clashes').textContent=e.message;toast(e.message);}
+}
+function disconnectCalendar(){if(state.token&&window.google?.accounts?.oauth2)google.accounts.oauth2.revoke(state.token,()=>{});state.token=null;$('calendar-status').textContent='Not connected';$('calendar-clashes').textContent='';$('calendar-connect').textContent='Connect calendar';$('calendar-disconnect').hidden=true;toast('Disconnected for this session.');}
+function init(){
+  $('crawl-date').value=isoDate(new Date());$('today-text').textContent=new Date().toLocaleDateString('en-GB',{weekday:'short',day:'numeric',month:'short'});
+  initialiseMap();
+  for(const button of document.querySelectorAll('[data-tab]'))button.addEventListener('click',()=>setTab(button.dataset.tab));
+  $('find-place').addEventListener('click',findPlace);$('place-input').addEventListener('keydown',e=>{if(e.key==='Enter')findPlace();});
+  $('use-my-location').addEventListener('click',useLocation);$('nearby-search').addEventListener('click',loadPubs);$('calculate-route').addEventListener('click',calculateRoute);
+  $('save-plan').addEventListener('click',savePlan);$('share-plan').addEventListener('click',sharePlan);$('download-ics').addEventListener('click',downloadCalendar);$('google-add').addEventListener('click',addGoogleEvent);
+  $('roulette-spin').addEventListener('click',spinRoulette);$('calendar-connect').addEventListener('click',connectCalendar);$('calendar-disconnect').addEventListener('click',disconnectCalendar);
+  for(const id of ['crawl-date','start-time','group-size','pint-mins','pints-stop','stop-buffer'])$(id).addEventListener('change',()=>{clearRoute();if(id==='crawl-date'||id==='start-time')debounceWeather();});
+  $('pub-radius').addEventListener('change',()=>toast('Press “Find nearby pubs” to search the new radius.'));
+  window.PintPlanner={add:addStop,remove:removeStop,move:moveStop,loadSaved,deleteSaved};
+  const params=new URL(location.href).searchParams;
+  if(params.has('plan')){try{applyPayload(decodePlan(params.get('plan')));}catch(e){toast('The shared plan link could not be read.');}}
+  const hash=location.hash.slice(1);if(['planner','roulette','saved'].includes(hash))setTab(hash);
+  renderSaved();updateUI();refreshWeather();
+  // Light initial query so opening the app is useful immediately. Cached in session.
+  loadPubs();
+  // Single-file edition: no service worker; web connection required.
+}
+document.addEventListener('DOMContentLoaded',init);
+
+</script>
+</body>
+</html>
